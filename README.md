@@ -114,7 +114,7 @@ Then repeat in `0.03/` and `0.1/` (these produce the 3% and 10% rows of Table B.
 
 ```bash
 cd ../0.03 && python run_all_results0.03.py
-cd ../0.1  && python run_all_results0.10.py
+cd ../0.10  && python run_all_results0.10.py
 ```
 
 **Speed knob.** Each driver starts with `QUICK_TEST = True` (short MCMC chains and a

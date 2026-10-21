@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "analytic_SIS_normalisation",
+      "passed": true
+    },
+    {
+      "check": "numerical_vs_analytic_Jeans",
+      "passed": true,
+      "max_relative_sigma_error": 6.901219366195477e-06
+    },
+    {
+      "check": "full_model_covariance_and_Jacobian",
+      "passed": true
+    },
+    {
+      "check": "SN_common_calibration_cancellation",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "signature": "f3853aa3a2ed3aa08af37d9e603397882fe271145b31f731febf6e6a8838f811",
+  "result": {
+    "spec": {
+      "framework": "P3",
+      "beta_prior": "flat",
+      "domain": "convergent_jeans",
+      "tracer": "powerlaw"
+    },
+    "names": [
+      "gamma0",
+      "gamma_z",
+      "beta",
+      "gamma_s",
+      "f_int"
+    ],
+    "N": 107,
+    "k": 5,
+    "theta": [
+      2.1580456948194398,
+      -0.792280782194691,
+      -0.7032380604767269,
+      -0.051058872941471614,
+      0.07984981668877947
+    ],
+    "lnL": -513.8838481106307,
+    "AIC": 1037.7676962212613,
+    "BIC": 1051.1318403935709,
+    "starts": [
+      {
+        "theta": [
+          2.1580456948194398,
+          -0.792280782194691,
+          -0.7032380604767269,
+          -0.051058872941471614,
+          0.07984981668877947
+        ],
+        "lnL": -513.8838481106307,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.1580456537468513,
+          -0.7922806627334759,
+          -0.7032381630533637,
+          -0.051058910585355985,
+          0.07984982123252261
+        ],
+        "lnL": -513.8838481106308,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.1580456877285235,
+          -0.7922807774351224,
+          -0.7032379862155665,
+          -0.051058863613104626,
+          0.07984981571141833
+        ],
+        "lnL": -513.8838481106307,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      }
+    ],
+    "multi_start_lnL_range": 1.1368683772161603e-13,
+    "optimizer_agreement_checked": true,
+    "elapsed_seconds": 4.949595500016585,
+    "data_digest": "96754c327f40432b2b84146d3be02ce171b96b3a07597256f95dbd3287e3e021",
+    "optimization": "likelihood only; Gaussian beta prior does not enter AIC/BIC"
+  },
+  "extra": {
+    "id": "p3_powerlaw",
+    "tracer": "powerlaw",
+    "framework": "P3",
+    "posterior_priors": [
+      "flat",
+      "gaussian",
+      "fixed0",
+      "fixed018"
+    ]
+  }
+}

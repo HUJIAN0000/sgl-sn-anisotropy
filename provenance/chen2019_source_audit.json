@@ -1,0 +1,82 @@
+{
+  "source_pdf": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\references\\Chen2019_stz1902.pdf",
+  "source_pdf_sha256": "8d49cf39dd4f094418c492a432d7c9c1d40edfeccd70983b8cf8a88e02c8d1f3",
+  "article": "Chen, Li, Shu & Cao (2019), MNRAS 488, 3745-3758, doi:10.1093/mnras/stz1902",
+  "verified_PDF_pages": [
+    3,
+    4,
+    8,
+    13,
+    14
+  ],
+  "verified_print_pages": [
+    3747,
+    3748,
+    3752,
+    3757,
+    3758
+  ],
+  "published_delta_definition": "nu(r) proportional to r^(-delta); projected I(R) proportional to R^(1-delta)",
+  "fitting_region": "Projected circle R <= Reff/2; fitted PSF-convolved power-law surface brightness",
+  "bands": {
+    "SLACS": "F814W",
+    "S4TM": "F814W",
+    "BELLS": "F814W",
+    "BELLS_GALLERY": "F606W"
+  },
+  "published_statistical_error_claim": "Individual relative statistical delta errors smaller than 1 percent; no individual error table supplied",
+  "published_delta_mean": 2.173,
+  "published_delta_population_scatter": 0.085,
+  "supplied_delta_mean": 2.173066153846154,
+  "supplied_delta_population_std": 0.08484383713972227,
+  "supplied_delta_sample_std": 0.08517205436971415,
+  "Table_A1_contains_individual_delta": false,
+  "Table_A1_matched_rows": 130,
+  "Table_A1_numeric_fields_checked": 7,
+  "Table_A1_discrepancies": [],
+  "Table_A1_all_checked_fields_agree": true,
+  "aperture_definition": "Table A1 sigma_ap is dispersion in listed circular theta_ap, before Eq.19 correction to Reff/2",
+  "historical_aperture_correction": {
+    "equation": 19,
+    "eta": -0.066,
+    "eta_uncertainty": 0.035,
+    "formula": "sigma_e2 = sigma_ap * [theta_eff/(2 theta_ap)]^eta"
+  },
+  "current_aperture_choice": "Forward model directly at original aperture; do not apply Eq.19 twice or add its uncertainty without making that transformation",
+  "aperture_to_photometric_fit_radius": {
+    "parent130": {
+      "N": 130,
+      "aperture_exceeds_photometric_fit_radius": 113,
+      "aperture_to_photometric_fit_radius_min": 0.625,
+      "aperture_to_photometric_fit_radius_median": 1.6574585635359116,
+      "aperture_to_photometric_fit_radius_max": 4.545454545454546
+    },
+    "primary107": {
+      "N": 107,
+      "aperture_exceeds_photometric_fit_radius": 92,
+      "aperture_to_photometric_fit_radius_min": 0.625,
+      "aperture_to_photometric_fit_radius_median": 1.530612244897959,
+      "aperture_to_photometric_fit_radius_max": 4.545454545454546
+    }
+  },
+  "historical_beta_prior": {
+    "mean": 0.18,
+    "sigma": 0.13,
+    "lower": -0.08,
+    "upper": 0.44,
+    "source": "Section 2, page 3748, truncation at mean +/- 2 sigma"
+  },
+  "current_beta_prior": {
+    "mean": 0.18,
+    "sigma": 0.13,
+    "lower": -1,
+    "upper": 1,
+    "interpretation": "Same Gaussian centre and width but different truncation; must not be described as exact reproduction of the Chen2019 prior"
+  },
+  "sharing": {
+    "author_statement": "Email had no explanatory note or special restrictions; user believes data can be public",
+    "public_redistribution_permission_explicitly_documented": false,
+    "publication_status": "Local use/revision continues; no external upload has been performed"
+  },
+  "action": "Preserve active chains and frozen science modules. Update provenance and writing instructions; add a labelled 1-percent upper-bound delta-error scenario."
+}

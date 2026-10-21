@@ -1,178 +1,114 @@
-# sgl-sn-anisotropy
+# Strong-lens anisotropy and tracer-profile sensitivity
 
-Reproduction package for the paper
+Code, observational inputs and reference results for manuscript v4 of the aa61321-26 second-review revision:
 
-> **Can stellar velocity anisotropy be neglected in strong-lensing cosmology?**
-> J. Hu et al. (submitted to *Astronomy & Astrophysics*)
+**Anisotropy and tracer-profile assumptions in aperture-based strong-lens dynamics: Conditional inference from supernova distance ratios and unresolved stellar kinematics**
 
-This repository contains the matched galaxy-scale strong-lensing (SGL) + Type Ia
-supernova (SN) catalogues, their covariance matrices, the pairing code, and the
-analysis scripts that reproduce **every table and figure** in the paper.
+Jian Hu, Yi Liu, Jian-Ping Hu and Zhongmu Li
 
-The study tests, in a cosmology-independent way, whether the stellar
-velocity-anisotropy parameter `β_ani` can be neglected in SGL cosmology. Using a
-spherical-Jeans model on 107 SGL–SN pairs we find that a free `β_ani` is
-statistically preferred (ΔBIC ≈ 5.6), that fixing it biases the density-slope
-parameter `γ₀`, and that the recovered `β_ani` is best read as an **effective**
-misfit-diagnostic parameter rather than a physical measurement of orbital
-anisotropy.
+Repository: https://github.com/HUJIAN0000/sgl-sn-anisotropy
 
-The pairing itself uses the mixed-integer linear program (MILP) implemented in the
-**CosmoMatcher** tool (https://github.com/HUJIAN0000/CosmoMatcher). The samples
-here were produced with a headless command-line wrapper of that routine
-(`match_milp_headless*.py`) in which the tie-breaker weight is set to `ε = 0.1`
-(instead of the released default `1e-6`) to make the maximum-cardinality matching
-deterministic and reproducible. See Appendix F of the paper.
+This revision replaces the initial-submission analysis in the current repository tree. Earlier commits and releases document that earlier analysis; their catalogues, numerical summaries and drivers should not be mixed with this revision. The present study tests how a common-anisotropy comparison depends on tracer profiles, photometric assumptions and catalogue treatment. It does not estimate the Hubble constant or cosmic curvature.
 
----
+## Quick start: inspect and verify the published inputs
 
-## Repository layout
+Use Python 3.11 with the packages listed in `requirements-tested.txt`. The pinned list records the calculation environment; it does not install packages automatically.
 
-The analysis is run **once per matching tolerance** `Δd/d ∈ {0.03, 0.05, 0.10}`,
-each in its own folder. Each folder is self-contained: drop into it and run.
-
-```
-sgl-sn-anisotropy/
-├── README.md
-│
-├── 0.05/                          # baseline tolerance Δd/d = 5%  (paper main text)
-│   ├── Pantheon+SH0ES_STAT+SYS.cov.zip   # raw SN covariance (UNZIP before re-pairing)
-│   ├── Pantheon+SH0ES.dat                # raw Pantheon+SH0ES catalogue
-│   ├── 130sgls2.CSV                      # parent SGL catalogue (130 systems, with delta_i)
-│   ├── match_milp_headless0.05.py        # MILP pairing (headless CosmoMatcher, ε=0.1)
-│   ├── matched_result_sgls_Om0.25.csv    # matched samples at Ω_m = 0.25 / 0.30 / 0.35
-│   ├── matched_result_sgls_Om0.30.csv
-│   ├── matched_result_sgls_Om0.35.csv
-│   ├── cov_sgls_{lens,source,cross}_Om0.25.txt
-│   ├── cov_sgls_{lens,source,cross}_Om0.30.txt
-│   ├── cov_sgls_{lens,source,cross}_Om0.35.txt
-│   ├── cosmo_tools.py                    # getdist plotting helper (needed for figures)
-│   └── run_all_results0.05.py            # MAIN driver -> all tables + triangle plots
-│
-├── 0.03/                          # tolerance Δd/d = 3%
-│   ├── match_milp_headless0.03.py
-│   ├── matched_result_sgls_Om0.25.csv / _Om0.30.csv / _Om0.35.csv
-│   ├── cov_sgls_{lens,source,cross}_Om0.25.txt / _Om0.30.txt / _Om0.35.txt
-│   ├── cosmo_tools.py
-│   └── run_all_results0.03.py
-│
-└── 0.1/                           # tolerance Δd/d = 10%
-    ├── match_milp_headless0.1.py
-    ├── matched_result_sgls_Om0.25.csv / _Om0.30.csv / _Om0.35.csv
-    ├── cov_sgls_{lens,source,cross}_Om0.25.txt / _Om0.30.txt / _Om0.35.txt
-    ├── cosmo_tools.py
-    └── run_all_results0.10.py
+```text
+python -B reproduce_revision2.py verify
 ```
 
-> The three **raw** input files (`Pantheon+SH0ES_STAT+SYS.cov`,
-> `Pantheon+SH0ES.dat`, `130sgls2.CSV`) are stored **only in `0.05/`** to avoid
-> duplicating the large covariance file. The matched samples for every tolerance
-> are already provided, so the analysis runs without them. They are needed only if
-> you want to **re-run the pairing** (see below).
->
-> `cosmo_tools.py` is required for the triangle plots. If it is missing the driver
-> still produces all tables and simply skips the figures.
+This command safely expands the compressed Pantheon+ covariance when needed, checks file hashes and loads the frozen matched catalogue. It verifies 107 lenses, 214 distinct supernova CIDs and 12 systems with fractional distance-ratio uncertainty above 20%. It does not run an optimiser or MCMC.
 
----
+## Repository contents
 
-## Requirements
+| Path | Contents |
+| --- | --- |
+| `data/raw/` | Original 130-lens table with individual luminosity slopes; full Pantheon+SH0ES table; compressed STAT+SYS covariance |
+| `data/primary/` | Frozen 107-lens assignment, original row-index map, lens/source/cross covariance blocks |
+| `data/matching_variants/`, `data/derived/` | Alternative assignments and supporting catalogue products |
+| `aa_revision/` | Scientific model, likelihood, quadrature and inference implementation |
+| `tools/` | Original CosmoMatcher 1.4.3 and author plotting utility |
+| `scripts/`, `configs/` | Production drivers, plotting adapter and calculation settings |
+| `reference_results/` | Completed likelihood comparisons, 16 main posterior summaries, eight latent-slope summaries, mock outcomes, sensitivities and diagnostics |
+| `figures/` | All 16 main individual posterior triangles and four overlay figures |
+| `manuscript/clean/` | Clean revised TeX source, required tables/figures and compiled manuscript |
+| `provenance/` | Input hashes, calculation validation records and the release-sample index |
+| `docs/` | Data dictionary, result map, attribution and reproduction notes |
 
-Python 3.9+ and:
+Reference results remain separate from `results/`, which is populated by restored samples or new calculations. Historical provenance may contain the original machine's absolute paths; those records are not execution inputs. Executable matching paths are portable and relative to the repository root.
 
-```bash
-pip install numpy pandas scipy emcee getdist matplotlib
+## Use the completed posterior samples without rerunning MCMC
+
+The five `posterior_*.zip` files accompanying this revision are intended as GitHub Release assets, separate from regular Git-tracked files. Download all five assets to one directory, then run:
+
+```text
+python -B restore_posterior_assets.py --assets /path/to/downloaded/assets
 ```
 
-(`emcee` is needed for the posteriors/Table 2; `getdist` + `matplotlib` for the
-triangle plots. The model-comparison tables need only numpy/pandas/scipy.)
+The helper checks every archive member against `provenance/posterior_release_index.json`, restores the accepted NPZ samples and summaries into `results/production/`, and restores the main sampling status record. It refuses to replace a different existing file. On Windows, quote a path containing spaces.
 
----
+These assets contain all retained NPZ draws for 16 main and eight latent-slope posterior products, with matching SHA-256 hashes. They do not contain the full HDF5 sampler backends or every latent-coordinate time series. Global-parameter trace plots, numerical-accuracy records and diagnostic summaries are provided under `reference_results/validation/`. Restoring the NPZ files is sufficient to use the retained global-parameter distributions and, with the plotting environment, regenerate the main triangles:
 
-## Quick start — reproduce the paper (uses the provided matched samples)
-
-```bash
-cd 0.05
-python run_all_results0.05.py
+```text
+python -B reproduce_revision2.py figures
 ```
 
-This consumes the matched samples already in the folder (no re-pairing) and writes:
+The figures already included in the repository are the manuscript outputs. Plot regeneration is optional; it is not another scientific sampling task.
 
-| Output | Content |
-|---|---|
-| `table1_p2_modelcomp.{csv,tex}`  | Table 1 — P2 model comparison (free vs fixed β) |
-| `table2_p2_posteriors.csv`       | Table 2 — P2 posteriors (emcee) |
-| `table3_p3_modelcomp.{csv,tex}`  | Table 3 — P3 robustness check |
-| `tableB1_tolerance.{csv,tex}`    | Table B.1 row for this tolerance |
-| `tableC1_power.csv`              | Table C.1 — two-sided power analysis |
-| `tableD1_omega.{csv,tex}`        | Table D.1 — Ω_m robustness (0.25/0.30/0.35) |
-| `tableX_delta_sensitivity.csv`   | δ_i-sensitivity appendix table |
-| `P2_*_Opt_GetDist.pdf`, `P2_Beta_Models_Comparison_Opt.pdf` | P2 triangle plots |
-| `P3_*_Opt_GetDist.pdf`, `P3_Beta_Models_Comparison_Opt.pdf` | P3 triangle plots |
-| `ALL_RESULTS.log`, `ALL_RESULTS_summary.json` | full log + machine-readable summary |
+## Recompute the analysis
 
-Then repeat in `0.03/` and `0.1/` (these produce the 3% and 10% rows of Table B.1):
+For an independent calculation, use a fresh repository copy, keep `reference_results/` intact, and run these stages in order:
 
-```bash
-cd ../0.03 && python run_all_results0.03.py
-cd ../0.10  && python run_all_results0.10.py
+```text
+python -B reproduce_revision2.py fit --workers 8
+python -B reproduce_revision2.py posteriors --workers 8
+python -B reproduce_revision2.py sensitivities --workers 8
+python -B reproduce_revision2.py matching-variants
+python -B reproduce_revision2.py mocks --workers 8
+python -B reproduce_revision2.py latent --workers 16
+python -B reproduce_revision2.py figures
+python -B reproduce_revision2.py audit
 ```
 
-**Speed knob.** Each driver starts with `QUICK_TEST = True` (short MCMC chains and a
-small number of power realisations — good for a fast sanity check). For the
-publication-grade Table 2 error bars, Table C.1 percentages, and final triangle
-plots, set `QUICK_TEST = False` near the top of the driver and rerun. The
-model-comparison tables (1, 3, B.1, D.1) are MLE-based and are identical either way.
+These commands perform full calculations and may take substantial time. Acceptance depends on the stated convergence criteria, rather than a requested number of steps. The final audit reads outputs of the complete calculation, including sampler backends; restoring NPZ assets alone is not a substitute for those backends. Parallel workers operate on independent jobs or saved chains, with low-level thread counts restricted to avoid nested oversubscription. `matching-variants` runs serially and rejects an explicit `--workers` option. Parallel calculation stages default to eight workers. Subprocess stdout and stderr are saved separately under `logs/`, with paths printed before launch. The latent stage validates all eight completed initial products and their four closed checkpoints before extending any chains. Only the initial driver's explicit convergence exit with complete 80000-step unaccepted products permits recovery; crashes, missing products and inconsistent checkpoints stop the entrypoint. The sampler, seed and convergence criteria are unchanged.
 
----
+The default calculation starts from the frozen assignment. To repeat raw-input matching, make a separate fresh repository copy and complete these steps in that same copy:
 
-## Optional — re-run the pairing from scratch
+1. Run `python -B reproduce_revision2.py verify` while the published `data/primary/` is still present. This expands and checks the raw covariance.
+2. Move that copy's `data/primary/` to a backup location outside the working tree.
+3. In the same verified copy, run `python -B scripts/rebuild_inputs.py`. The driver refuses to overwrite an existing assignment.
+4. Continue the calculation stages above. If the assignment is deliberately changed, analyse it separately from the published reference results.
 
-The matched samples are provided, but you can regenerate them.
+The optional initial-submission comparison reads `reference_history/initial_submission_matched_catalog.csv` only if separately supplied. This historical file is not required to generate the new assignment.
 
-**5% folder (has the raw files):**
+The upload package was checked for input integrity, accepted-sample identity, portable matching paths, archive integrity and Python syntax. The completed scientific calculations are the reference run; the portable package was not used to repeat the full production calculation during packaging.
 
-```bash
-cd 0.05
-unzip Pantheon+SH0ES_STAT+SYS.cov.zip      # produces Pantheon+SH0ES_STAT+SYS.cov
-python match_milp_headless0.05.py          # writes matched_result_sgls_Om*.csv + cov_*.txt
-python run_all_results0.05.py
+## Reference results and interpretation
+
+The baseline assignment uses a relative comoving-distance matching tolerance of 0.05 in a fiducial flat background with Omega_m = 0.30. That background specifies catalogue matching, not a fitted cosmological parameter.
+
+| Tracer | BIC(fixed beta=0) minus BIC(free beta) | BIC(fixed beta=0.18) minus BIC(free beta) |
+| --- | ---: | ---: |
+| Individual-slope power law | 6.7380 | 41.5057 |
+| Hernquist | -3.8872 | -2.2601 |
+| Sersic n=4 | -4.6717 | -4.3015 |
+
+There are 16 accepted main posterior products and eight accepted latent-slope posterior products. Recovery tests use 800 symmetric-noise realisations and 4800 fits. The lower-distance-uncertainty subset contains 95 lenses and has power-law isotropy BIC difference 2.5084. See `docs/RESULTS_MAP.md` for machine-readable sources.
+
+The comparison is conditional on spherical dynamics, power-law mass profiles and a common constant anisotropy. Curved tracer families, Sersic indices and the PSF examples are assumed scenarios, not new fits to the original images. The delta-error widths are explicit sensitivity assumptions; population scatter is not substituted for individual measurement error. Convergence does not establish physical model adequacy, and these comparisons do not identify a unique cause of the observational residuals.
+
+## Sources and licence
+
+The lens compilation and photometric procedure are from Chen, Li, Shu & Cao (2019), MNRAS 488, 3745, https://doi.org/10.1093/mnras/stz1902. Individual delta values were provided by Yun Chen. The original survey papers are cited in the manuscript. Supernova inputs are from the official Pantheon+ release: https://github.com/PantheonPlusSH0ES/DataRelease.
+
+The repository's existing MIT software licence is preserved verbatim in `LICENSE`. Original third-party headers and notices remain in place. This software licence does not relicense observational datasets, journal class files or other third-party material. See `docs/DATA_SOURCES.md` for attribution and file-level provenance.
+
+
+## Entrypoint checks
+
+```text
+python -B -m unittest discover -s tests -p test_reproduce_entrypoint.py -v
 ```
 
-**3% / 10% folders:** their `match_milp_headless0.03.py` / `match_milp_headless0.1.py`
-read the same three raw files, which are not duplicated here. To re-pair, copy them
-in first:
-
-```bash
-cd 0.03
-cp ../0.05/130sgls2.CSV ../0.05/Pantheon+SH0ES.dat .
-cp ../0.05/Pantheon+SH0ES_STAT+SYS.cov .          # after unzipping it in 0.05/
-python match_milp_headless0.03.py
-python run_all_results0.03.py
-```
-
----
-
-## Verification (self-check)
-
-Headline numbers a correct run should reproduce:
-
-| Tolerance | N pairs | Free max ln L | ΔBIC (free vs β=0) |
-|---|---|---|---|
-| 3%  | 104 | −398.54 | **1.92** |
-| 5%  | 107 | −416.41 | **5.64** |
-| 10% | 117 | −459.48 | **7.58** |
-
-At 5%: Table 3 gives ΔBIC = 5.65 / 33.23 (vs β=0 / β=0.18) with γ_s ≈ −0.03; the
-Ω_m-robustness row for Ω_m = 0.30 equals the 5% baseline (ΔBIC ≈ 5.64).
-
----
-
-## Citation
-
-If you use this code or the matched catalogues, please cite the paper (J. Hu et al.,
-*A&A*, submitted) and the CosmoMatcher tool
-(https://github.com/HUJIAN0000/CosmoMatcher).
-
-## Contact
-
-Jian Hu — dg1626002@smail.nju.edu.cn
+These 21 lightweight tests exercise normal acceptance, expected convergence extension, crashes, invalid or missing outputs and argument handling using small test fixtures. They do not launch scientific inference.

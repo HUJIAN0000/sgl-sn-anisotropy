@@ -1,0 +1,17 @@
+{
+  "N": 107,
+  "definition": {
+    "id": "canonical_reverse_SN_order",
+    "tolerance": 0.05,
+    "reverse_SN": true
+  },
+  "file_sha256": {
+    "cov_cross.txt": "2f6a413c07d36ac407ed15f7dfdb709ac4dc8218473c5617c83ad3001bf2248e",
+    "cov_lens.txt": "3d7903f4a57c7e0c40837505c120b9d2dd0308c2fe0c29e566bb205d4626277b",
+    "cov_source.txt": "10b46c9fa4dacc49ce840a0683a57221f47987681a31987309b53c707d4151a8",
+    "matched_catalog.csv": "b01dbe027be74acc99826dc65098c428a3a23246b854ad3db7d18101c883bc8d",
+    "matcher_summary.json": "da9621ea27f656be0a2c22d46986fd8f0e41537427f76bb97474d2e70a1a434e",
+    "original_row_index_map.csv": "e0222d7cb093b750516e84a1f2e62a1dea6fe2647c6375fa531afef835edcb4a"
+  },
+  "source": "Direct supplied matcher, new raw inputs, explicit original covariance row indices"
+}

@@ -1,0 +1,87 @@
+{
+  "signature": "c57e8c2d57e80dc8ee280e622b3d9262c3662192650616d7f536878a1e422cf3",
+  "result": {
+    "spec": {
+      "framework": "P2",
+      "beta_prior": "flat",
+      "domain": "convergent_jeans",
+      "tracer": "sersic"
+    },
+    "names": [
+      "gamma0",
+      "gamma_z",
+      "beta",
+      "f_int"
+    ],
+    "N": 107,
+    "k": 4,
+    "theta": [
+      2.1823824691209257,
+      -0.8320391680505783,
+      -0.5413093696467921,
+      0.08025873892386208
+    ],
+    "lnL": -513.9984017881236,
+    "AIC": 1035.9968035762472,
+    "BIC": 1046.6881189140947,
+    "starts": [
+      {
+        "theta": [
+          2.1823824691209257,
+          -0.8320391680505783,
+          -0.5413093696467921,
+          0.08025873892386208
+        ],
+        "lnL": -513.9984017881236,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.1823825041575917,
+          -0.8320392550007898,
+          -0.5413094416081615,
+          0.0802587398792387
+        ],
+        "lnL": -513.9984017881236,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.182382530928326,
+          -0.8320392674365319,
+          -0.5413095385866278,
+          0.08025874043765785
+        ],
+        "lnL": -513.9984017881237,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      }
+    ],
+    "multi_start_lnL_range": 1.1368683772161603e-13,
+    "optimizer_agreement_checked": true,
+    "elapsed_seconds": 3.369644599966705,
+    "data_digest": "96754c327f40432b2b84146d3be02ce171b96b3a07597256f95dbd3287e3e021",
+    "optimization": "likelihood only; Gaussian beta prior does not enter AIC/BIC"
+  },
+  "extra": {
+    "id": "sersic_n2",
+    "tracer": "sersic",
+    "posterior_priors": [],
+    "jeans": {
+      "sersic_n": 2,
+      "nrad": 4096,
+      "extent": 1000000,
+      "abel_nodes": 128,
+      "angular_nodes": 192,
+      "psf_sigma_arcsec": 0
+    }
+  }
+}

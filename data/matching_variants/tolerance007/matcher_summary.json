@@ -1,0 +1,151 @@
+{
+  "version": "1.4.3",
+  "mode": "sgls",
+  "sn_type": "pantheon+",
+  "algorithm": "milp",
+  "criterion": "dd",
+  "tolerance": 0.07,
+  "omega_m": 0.3,
+  "input_target_rows": 130,
+  "valid_targets": 130,
+  "input_tracer_rows": 1701,
+  "valid_tracers": 1701,
+  "matched_targets": 111,
+  "yield_percent": 85.38461538461539,
+  "distinct_catalogue_rows": 222,
+  "distinct_physical_ids": 222,
+  "tracer_id_column": "CID",
+  "uniqueness": "object",
+  "enforce_tracer_order": true,
+  "candidate_triplets_or_pairs": 331340,
+  "variables": 14162,
+  "constraints": 1278,
+  "nonzeros": 28324,
+  "formulation": "compact",
+  "solver": {
+    "maximum_cardinality": 111,
+    "secondary_cost": 0.04008124270429901,
+    "stages": [
+      {
+        "name": "maximum_cardinality",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.1497514999937266,
+        "mip_gap": 0.0,
+        "dual_bound": -111.0,
+        "objective": -111.0
+      },
+      {
+        "name": "minimum_mismatch",
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "seconds": 0.18430580000858754,
+        "mip_gap": 0.0,
+        "dual_bound": 8.181718590581903,
+        "objective": 8.181718590581903
+      }
+    ],
+    "optimal": true,
+    "canonicalization": {
+      "rule": "catalogue_order",
+      "cost_tolerance": 1e-12,
+      "steps": 130,
+      "seconds": 15.03284739999799,
+      "second_stage_cost": 0.04008124270429901,
+      "cost_change": 0.0
+    }
+  },
+  "mean_relative_comoving_error": 0.005784816141839561,
+  "max_relative_comoving_error": 0.06842295246137035,
+  "covariance_kind": "total",
+  "covariance_validation": {
+    "shape": [
+      1701,
+      1701
+    ],
+    "symmetric": true,
+    "psd_checked": true,
+    "minimum_eigenvalue_if_needed": null,
+    "asymmetry_max_abs": 3.0000000000038676e-08,
+    "asymmetry_relative_to_matrix_max": 7.671984801296533e-08,
+    "symmetry_rtol": 1e-06,
+    "roundoff_symmetrized_for_validation": true,
+    "roundoff_correction_applied": true
+  },
+  "target_covariance_validation": null,
+  "covariance_alignment": "original_catalogue_row_order",
+  "cross_probe_assumption": "not_assembled",
+  "observable_notes": [
+    "R_flat assumes spatial flatness, common SN absolute magnitude, exact redshifts, and first-order covariance propagation; target-transfer mismatch is not included as extra noise."
+  ],
+  "matrix_order": "all lens-role SN, then all source-role SN",
+  "timing_seconds": {
+    "load_validate": 0.8039534999988973,
+    "candidate_or_greedy": 0.01037420000648126,
+    "milp_solve": 15.36859219998587,
+    "export": 0.08359619998373091,
+    "plots": 1.00000761449337e-06,
+    "total": 16.44081380002899
+  },
+  "environment": {
+    "python": "3.11.16",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.17.1",
+    "platform": "Windows-10-10.0.19045-SP0"
+  },
+  "configuration": {
+    "file_paths": {
+      "tracer": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\data\\raw\\Pantheon+SH0ES.dat",
+      "obj": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\data\\raw\\sgls130.CSV",
+      "covariance": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\data\\raw\\Pantheon+SH0ES_STAT+SYS.cov"
+    },
+    "col_cfg": {
+      "tracer_z_col": "zHD",
+      "tracer_id_col": "CID",
+      "z1_col": "zl",
+      "z2_col": "zs",
+      "magnitude_col": "m_b_corr",
+      "output_cols": [
+        "CID",
+        "IDSURVEY",
+        "zHD",
+        "zHEL",
+        "zCMB",
+        "m_b_corr",
+        "m_b_corr_err_DIAG",
+        "IS_CALIBRATOR"
+      ]
+    },
+    "params": {
+      "wm": 0.3,
+      "tol": 0.07,
+      "unique_by": "object",
+      "formulation": "compact",
+      "tie_break": "catalogue_order",
+      "tie_cost_tolerance": 1e-12,
+      "enforce_tracer_order": true,
+      "invalid_rows": "error",
+      "covariance_kind": "total",
+      "require_covariance": true,
+      "check_psd": true,
+      "time_limit": 600,
+      "plots": false,
+      "output_dir": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\matching\\tolerance007"
+    }
+  },
+  "inputs": {
+    "tracer": {
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\data\\raw\\Pantheon+SH0ES.dat",
+      "sha256": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8"
+    },
+    "obj": {
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\data\\raw\\sgls130.CSV",
+      "sha256": "5894d9ef542a9bc02ecbb0481db76d6496fe630f4cbaeb9b2d8e2e2f2cbc8215"
+    },
+    "covariance": {
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\data\\raw\\Pantheon+SH0ES_STAT+SYS.cov",
+      "sha256": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc"
+    }
+  }
+}

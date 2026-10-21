@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "nested_likelihood_check": true,
+  "quadrature": {
+    "passed": true,
+    "method": "analytic",
+    "interpolation_passed": true
+  },
+  "data_digest": "96754c327f40432b2b84146d3be02ce171b96b3a07597256f95dbd3287e3e021",
+  "case": {
+    "id": "powerlaw",
+    "tracer": "powerlaw",
+    "posterior_priors": [
+      "flat",
+      "gaussian",
+      "fixed0",
+      "fixed018"
+    ]
+  }
+}

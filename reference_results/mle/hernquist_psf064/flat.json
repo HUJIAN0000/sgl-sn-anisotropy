@@ -1,0 +1,86 @@
+{
+  "signature": "39f1c1e5e59657b4a939589e96dc4b96ff42e1d1cf6b853bbb60bb863768233c",
+  "result": {
+    "spec": {
+      "framework": "P2",
+      "beta_prior": "flat",
+      "domain": "convergent_jeans",
+      "tracer": "hernquist"
+    },
+    "names": [
+      "gamma0",
+      "gamma_z",
+      "beta",
+      "f_int"
+    ],
+    "N": 107,
+    "k": 4,
+    "theta": [
+      2.1759503160245255,
+      -0.7475863999576233,
+      -0.28186798032947613,
+      0.08032232951755686
+    ],
+    "lnL": -513.9866796338192,
+    "AIC": 1035.9733592676384,
+    "BIC": 1046.664674605486,
+    "starts": [
+      {
+        "theta": [
+          2.1759503160245255,
+          -0.7475863999576233,
+          -0.28186798032947613,
+          0.08032232951755686
+        ],
+        "lnL": -513.9866796338192,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.175950333350497,
+          -0.7475863983892116,
+          -0.2818679901686493,
+          0.08032232847419896
+        ],
+        "lnL": -513.9866796338192,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.175950351779399,
+          -0.7475864313783838,
+          -0.2818681227047043,
+          0.08032233120905269
+        ],
+        "lnL": -513.9866796338192,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      }
+    ],
+    "multi_start_lnL_range": 0.0,
+    "optimizer_agreement_checked": true,
+    "elapsed_seconds": 3.5119011999922805,
+    "data_digest": "96754c327f40432b2b84146d3be02ce171b96b3a07597256f95dbd3287e3e021",
+    "optimization": "likelihood only; Gaussian beta prior does not enter AIC/BIC"
+  },
+  "extra": {
+    "id": "hernquist_psf064",
+    "tracer": "hernquist",
+    "posterior_priors": [],
+    "jeans": {
+      "nrad": 4096,
+      "extent": 1000000,
+      "abel_nodes": 128,
+      "angular_nodes": 192,
+      "psf_sigma_arcsec": 0.64
+    }
+  }
+}

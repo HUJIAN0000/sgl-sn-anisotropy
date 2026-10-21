@@ -1,0 +1,83 @@
+[
+  {
+    "variant": "tolerance003",
+    "case": "powerlaw",
+    "N": 104,
+    "shared_triplets_with_primary": 92,
+    "delta_BIC_0": 3.685428114668639,
+    "delta_BIC_018": 35.318024323397935,
+    "passed": true
+  },
+  {
+    "variant": "tolerance003",
+    "case": "hernquist",
+    "N": 104,
+    "shared_triplets_with_primary": 92,
+    "delta_BIC_0": -4.316545659249414,
+    "delta_BIC_018": -3.119480272500823,
+    "passed": true
+  },
+  {
+    "variant": "tolerance003",
+    "case": "sersic_n4",
+    "N": 104,
+    "shared_triplets_with_primary": 92,
+    "delta_BIC_0": -4.564893307681132,
+    "delta_BIC_018": -4.5617226388369545,
+    "passed": true
+  },
+  {
+    "variant": "tolerance007",
+    "case": "powerlaw",
+    "N": 111,
+    "shared_triplets_with_primary": 81,
+    "delta_BIC_0": 6.89573474193503,
+    "delta_BIC_018": 41.993510001342656,
+    "passed": true
+  },
+  {
+    "variant": "tolerance007",
+    "case": "hernquist",
+    "N": 111,
+    "shared_triplets_with_primary": 81,
+    "delta_BIC_0": -4.315038824066278,
+    "delta_BIC_018": -3.03710211900966,
+    "passed": true
+  },
+  {
+    "variant": "tolerance007",
+    "case": "sersic_n4",
+    "N": 111,
+    "shared_triplets_with_primary": 81,
+    "delta_BIC_0": -4.67544648701346,
+    "delta_BIC_018": -4.560860609995871,
+    "passed": true
+  },
+  {
+    "variant": "canonical_reverse_SN_order",
+    "case": "powerlaw",
+    "N": 107,
+    "shared_triplets_with_primary": 78,
+    "delta_BIC_0": 6.506551822638357,
+    "delta_BIC_018": 41.67286271502326,
+    "passed": true
+  },
+  {
+    "variant": "canonical_reverse_SN_order",
+    "case": "hernquist",
+    "N": 107,
+    "shared_triplets_with_primary": 78,
+    "delta_BIC_0": -3.747636554162682,
+    "delta_BIC_018": -2.0013964311294785,
+    "passed": true
+  },
+  {
+    "variant": "canonical_reverse_SN_order",
+    "case": "sersic_n4",
+    "N": 107,
+    "shared_triplets_with_primary": 78,
+    "delta_BIC_0": -4.6636950078377595,
+    "delta_BIC_018": -4.21674316184999,
+    "passed": true
+  }
+]

@@ -1,0 +1,274 @@
+[
+  {
+    "truth": "hernquist_iso",
+    "case": "hernquist",
+    "fixed": "fixed0",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -3.6337755480480407,
+    "median_delta_BIC": -4.287968123982068,
+    "mean_beta_bias": -0.04701191394721459,
+    "mean_gamma_p_bias": -0.007844026046978944,
+    "probability_gt6": 0.01,
+    "wilson95": [
+      0.0027466581335444384,
+      0.0357217617161768
+    ],
+    "complete": true
+  },
+  {
+    "truth": "hernquist_iso",
+    "case": "hernquist",
+    "fixed": "fixed018",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -3.2272128087151497,
+    "median_delta_BIC": -3.9412714536543945,
+    "mean_beta_bias": -0.04701191394721459,
+    "mean_gamma_p_bias": -0.007844026046978944,
+    "probability_gt6": 0.0,
+    "wilson95": [
+      1.734723475976807e-18,
+      0.018845326377266575
+    ],
+    "complete": true
+  },
+  {
+    "truth": "hernquist_iso",
+    "case": "powerlaw",
+    "fixed": "fixed0",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": 6.880519154393319,
+    "median_delta_BIC": 5.972754870760298,
+    "mean_beta_bias": -0.49166267435545186,
+    "mean_gamma_p_bias": -0.008322623553292961,
+    "probability_gt6": 0.5,
+    "wilson95": [
+      0.43136085960389187,
+      0.5686391403961082
+    ],
+    "complete": true
+  },
+  {
+    "truth": "hernquist_iso",
+    "case": "powerlaw",
+    "fixed": "fixed018",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": 40.67064710975042,
+    "median_delta_BIC": 40.50217826765163,
+    "mean_beta_bias": -0.49166267435545186,
+    "mean_gamma_p_bias": -0.008322623553292961,
+    "probability_gt6": 1.0,
+    "wilson95": [
+      0.9811546736227335,
+      1.0
+    ],
+    "complete": true
+  },
+  {
+    "truth": "powerlaw_free",
+    "case": "powerlaw",
+    "fixed": "fixed0",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": 9.81387410338828,
+    "median_delta_BIC": 8.934382284150445,
+    "mean_beta_bias": -0.028582155060944373,
+    "mean_gamma_p_bias": -0.007477764023656186,
+    "probability_gt6": 0.675,
+    "wilson95": [
+      0.6073198511602996,
+      0.7360842846076571
+    ],
+    "complete": true
+  },
+  {
+    "truth": "powerlaw_free",
+    "case": "powerlaw",
+    "fixed": "fixed018",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": 45.4172507384694,
+    "median_delta_BIC": 44.90526672973556,
+    "mean_beta_bias": -0.028582155060944373,
+    "mean_gamma_p_bias": -0.007477764023656186,
+    "probability_gt6": 1.0,
+    "wilson95": [
+      0.9811546736227335,
+      1.0
+    ],
+    "complete": true
+  },
+  {
+    "truth": "powerlaw_free",
+    "case": "sersic_n4",
+    "fixed": "fixed0",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -2.6856184953920414,
+    "median_delta_BIC": -3.378350120519258,
+    "mean_beta_bias": 0.026105030121756866,
+    "mean_gamma_p_bias": 0.03590962048817362,
+    "probability_gt6": 0.0,
+    "wilson95": [
+      1.734723475976807e-18,
+      0.018845326377266575
+    ],
+    "complete": true
+  },
+  {
+    "truth": "powerlaw_free",
+    "case": "sersic_n4",
+    "fixed": "fixed018",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -1.0213182655965687,
+    "median_delta_BIC": -1.775699919116846,
+    "mean_beta_bias": 0.026105030121756866,
+    "mean_gamma_p_bias": 0.03590962048817362,
+    "probability_gt6": 0.03,
+    "wilson95": [
+      0.013820314340111346,
+      0.06389429245451925
+    ],
+    "complete": true
+  },
+  {
+    "truth": "powerlaw_iso",
+    "case": "powerlaw",
+    "fixed": "fixed0",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -3.5550149248862386,
+    "median_delta_BIC": -4.073593252723185,
+    "mean_beta_bias": -0.0052347027251540956,
+    "mean_gamma_p_bias": -0.010471791184407926,
+    "probability_gt6": 0.005,
+    "wilson95": [
+      0.0008831687156009814,
+      0.02777370439789293
+    ],
+    "complete": true
+  },
+  {
+    "truth": "powerlaw_iso",
+    "case": "powerlaw",
+    "fixed": "fixed018",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": 11.548590922190833,
+    "median_delta_BIC": 10.96463353121294,
+    "mean_beta_bias": -0.0052347027251540956,
+    "mean_gamma_p_bias": -0.010471791184407926,
+    "probability_gt6": 0.73,
+    "wilson95": [
+      0.6645656480133157,
+      0.7867655018531416
+    ],
+    "complete": true
+  },
+  {
+    "truth": "powerlaw_iso",
+    "case": "sersic_n4",
+    "fixed": "fixed0",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -1.989513482500792,
+    "median_delta_BIC": -2.8407359623837465,
+    "mean_beta_bias": 0.32061819949880005,
+    "mean_gamma_p_bias": 0.1250582980779082,
+    "probability_gt6": 0.03,
+    "wilson95": [
+      0.013820314340111346,
+      0.06389429245451925
+    ],
+    "complete": true
+  },
+  {
+    "truth": "powerlaw_iso",
+    "case": "sersic_n4",
+    "fixed": "fixed018",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -3.1029598737857413,
+    "median_delta_BIC": -3.8334930249299077,
+    "mean_beta_bias": 0.32061819949880005,
+    "mean_gamma_p_bias": 0.1250582980779082,
+    "probability_gt6": 0.005,
+    "wilson95": [
+      0.0008831687156009814,
+      0.02777370439789293
+    ],
+    "complete": true
+  },
+  {
+    "truth": "sersic_iso",
+    "case": "powerlaw",
+    "fixed": "fixed0",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": 8.444866469889753,
+    "median_delta_BIC": 8.462986641293583,
+    "mean_beta_bias": -0.5467462627121625,
+    "mean_gamma_p_bias": 0.0004680625294712652,
+    "probability_gt6": 0.6,
+    "wilson95": [
+      0.53083672039262,
+      0.6653942143319266
+    ],
+    "complete": true
+  },
+  {
+    "truth": "sersic_iso",
+    "case": "powerlaw",
+    "fixed": "fixed018",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": 43.85534467339082,
+    "median_delta_BIC": 43.67219127305037,
+    "mean_beta_bias": -0.5467462627121625,
+    "mean_gamma_p_bias": 0.0004680625294712652,
+    "probability_gt6": 1.0,
+    "wilson95": [
+      0.9811546736227335,
+      1.0
+    ],
+    "complete": true
+  },
+  {
+    "truth": "sersic_iso",
+    "case": "sersic_n4",
+    "fixed": "fixed0",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -3.556972909916808,
+    "median_delta_BIC": -4.088706140449062,
+    "mean_beta_bias": -0.08500231279588123,
+    "mean_gamma_p_bias": -0.006332044404761376,
+    "probability_gt6": 0.005,
+    "wilson95": [
+      0.0008831687156009814,
+      0.02777370439789293
+    ],
+    "complete": true
+  },
+  {
+    "truth": "sersic_iso",
+    "case": "sersic_n4",
+    "fixed": "fixed018",
+    "N_successful": 200,
+    "N_planned": 200,
+    "mean_delta_BIC": -3.2467201545265336,
+    "median_delta_BIC": -4.014019115768804,
+    "mean_beta_bias": -0.08500231279588123,
+    "mean_gamma_p_bias": -0.006332044404761376,
+    "probability_gt6": 0.0,
+    "wilson95": [
+      1.734723475976807e-18,
+      0.018845326377266575
+    ],
+    "complete": true
+  }
+]

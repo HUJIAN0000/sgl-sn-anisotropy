@@ -1,0 +1,188 @@
+{
+  "profile": "production",
+  "seed": 20261020,
+  "primary_catalogue": "data/primary",
+  "domain": "convergent_jeans",
+  "optimizer": {
+    "starts": 3,
+    "popsize": 12,
+    "maxiter": 600,
+    "local_maxiter": 8000
+  },
+  "mock_optimizer": {
+    "starts": 2,
+    "popsize": 8,
+    "maxiter": 300,
+    "local_maxiter": 4000
+  },
+  "mcmc": {
+    "ensembles": 4,
+    "walkers": 32,
+    "burn": 3000,
+    "progress": false,
+    "extension_steps": [
+      15000,
+      25000,
+      40000,
+      60000
+    ],
+    "diagnostics": {
+      "rhat_max": 1.01,
+      "ess_min": 2000,
+      "tau_multiple": 100,
+      "tau_stability": 0.05
+    }
+  },
+  "cases": [
+    {
+      "id": "powerlaw",
+      "tracer": "powerlaw",
+      "posterior_priors": [
+        "flat",
+        "gaussian",
+        "fixed0",
+        "fixed018"
+      ]
+    },
+    {
+      "id": "hernquist",
+      "tracer": "hernquist",
+      "posterior_priors": [
+        "flat",
+        "gaussian",
+        "fixed0",
+        "fixed018"
+      ],
+      "jeans": {
+        "nrad": 4096,
+        "extent": 1000000,
+        "abel_nodes": 128,
+        "angular_nodes": 192,
+        "psf_sigma_arcsec": 0
+      }
+    },
+    {
+      "id": "sersic_n4",
+      "tracer": "sersic",
+      "posterior_priors": [
+        "flat",
+        "gaussian",
+        "fixed0",
+        "fixed018"
+      ],
+      "jeans": {
+        "sersic_n": 4,
+        "nrad": 4096,
+        "extent": 1000000,
+        "abel_nodes": 128,
+        "angular_nodes": 192,
+        "psf_sigma_arcsec": 0
+      }
+    },
+    {
+      "id": "sersic_n2",
+      "tracer": "sersic",
+      "posterior_priors": [],
+      "jeans": {
+        "sersic_n": 2,
+        "nrad": 4096,
+        "extent": 1000000,
+        "abel_nodes": 128,
+        "angular_nodes": 192,
+        "psf_sigma_arcsec": 0
+      }
+    },
+    {
+      "id": "sersic_n6",
+      "tracer": "sersic",
+      "posterior_priors": [],
+      "jeans": {
+        "sersic_n": 6,
+        "nrad": 4096,
+        "extent": 1000000,
+        "abel_nodes": 128,
+        "angular_nodes": 192,
+        "psf_sigma_arcsec": 0
+      }
+    },
+    {
+      "id": "hernquist_psf064",
+      "tracer": "hernquist",
+      "posterior_priors": [],
+      "jeans": {
+        "nrad": 4096,
+        "extent": 1000000,
+        "abel_nodes": 128,
+        "angular_nodes": 192,
+        "psf_sigma_arcsec": 0.64
+      }
+    },
+    {
+      "id": "sersic_n4_psf064",
+      "tracer": "sersic",
+      "posterior_priors": [],
+      "jeans": {
+        "sersic_n": 4,
+        "nrad": 4096,
+        "extent": 1000000,
+        "abel_nodes": 128,
+        "angular_nodes": 192,
+        "psf_sigma_arcsec": 0.64
+      }
+    },
+    {
+      "id": "p3_powerlaw",
+      "tracer": "powerlaw",
+      "framework": "P3",
+      "posterior_priors": [
+        "flat",
+        "gaussian",
+        "fixed0",
+        "fixed018"
+      ]
+    }
+  ],
+  "mocks": {
+    "repetitions": 200,
+    "truth_sets": [
+      {
+        "id": "powerlaw_iso",
+        "case": "powerlaw",
+        "prior": "fixed0",
+        "fit_cases": [
+          "powerlaw",
+          "sersic_n4"
+        ]
+      },
+      {
+        "id": "powerlaw_free",
+        "case": "powerlaw",
+        "prior": "flat",
+        "fit_cases": [
+          "powerlaw",
+          "sersic_n4"
+        ]
+      },
+      {
+        "id": "sersic_iso",
+        "case": "sersic_n4",
+        "prior": "fixed0",
+        "fit_cases": [
+          "powerlaw",
+          "sersic_n4"
+        ]
+      },
+      {
+        "id": "hernquist_iso",
+        "case": "hernquist",
+        "prior": "fixed0",
+        "fit_cases": [
+          "powerlaw",
+          "hernquist"
+        ]
+      }
+    ]
+  },
+  "input_origin": "Original 130-lens table and complete SN table, rematched with supplied CosmoMatcher 1.4.3",
+  "historical_products_imported": false
+}

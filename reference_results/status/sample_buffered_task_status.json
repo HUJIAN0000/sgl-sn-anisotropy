@@ -1,0 +1,114 @@
+[
+  {
+    "case": "powerlaw",
+    "prior": "flat",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0067024131733477
+  },
+  {
+    "case": "powerlaw",
+    "prior": "fixed018",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0051142046550374
+  },
+  {
+    "case": "powerlaw",
+    "prior": "fixed0",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0060383898122194
+  },
+  {
+    "case": "powerlaw",
+    "prior": "gaussian",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0055145855941932
+  },
+  {
+    "case": "hernquist",
+    "prior": "fixed018",
+    "passed": true,
+    "steps": 15000,
+    "all_walker_rhat": 1.0092635964929897
+  },
+  {
+    "case": "hernquist",
+    "prior": "flat",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0079100705635915
+  },
+  {
+    "case": "hernquist",
+    "prior": "fixed0",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0071162845936308
+  },
+  {
+    "case": "hernquist",
+    "prior": "gaussian",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.006545813224541
+  },
+  {
+    "case": "sersic_n4",
+    "prior": "flat",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0071187535552266
+  },
+  {
+    "case": "sersic_n4",
+    "prior": "fixed0",
+    "passed": true,
+    "steps": 15000,
+    "all_walker_rhat": 1.0078822702324015
+  },
+  {
+    "case": "sersic_n4",
+    "prior": "fixed018",
+    "passed": true,
+    "steps": 15000,
+    "all_walker_rhat": 1.0079335893801105
+  },
+  {
+    "case": "sersic_n4",
+    "prior": "gaussian",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.005268917020947
+  },
+  {
+    "case": "p3_powerlaw",
+    "prior": "flat",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0078367928074319
+  },
+  {
+    "case": "p3_powerlaw",
+    "prior": "fixed0",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0068237283084633
+  },
+  {
+    "case": "p3_powerlaw",
+    "prior": "gaussian",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0068390534681604
+  },
+  {
+    "case": "p3_powerlaw",
+    "prior": "fixed018",
+    "passed": true,
+    "steps": 25000,
+    "all_walker_rhat": 1.0049545465026213
+  }
+]

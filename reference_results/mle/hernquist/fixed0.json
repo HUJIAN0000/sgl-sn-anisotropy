@@ -1,0 +1,86 @@
+{
+  "signature": "9ef8c10781fb0104c5211a5cd3050809a30cb74968789e7607ed1548e628248a",
+  "result": {
+    "spec": {
+      "framework": "P2",
+      "beta_prior": "fixed0",
+      "domain": "convergent_jeans",
+      "tracer": "hernquist"
+    },
+    "names": [
+      "gamma0",
+      "gamma_z",
+      "f_int"
+    ],
+    "N": 107,
+    "k": 3,
+    "theta": [
+      2.124674905533249,
+      -0.7005719985801312,
+      0.0818515899421635
+    ],
+    "lnL": -514.7661776733268,
+    "AIC": 1035.5323553466535,
+    "BIC": 1043.5508418500392,
+    "starts": [
+      {
+        "theta": [
+          2.124674905533249,
+          -0.7005719985801312,
+          0.0818515899421635
+        ],
+        "lnL": -514.7661776733268,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.1246749107387854,
+          -0.70057204094411,
+          0.08185158915702294
+        ],
+        "lnL": -514.7661776733268,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.124674892895051,
+          -0.7005719789694762,
+          0.08185159102683479
+        ],
+        "lnL": -514.7661776733268,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      }
+    ],
+    "multi_start_lnL_range": 0.0,
+    "optimizer_agreement_checked": true,
+    "elapsed_seconds": 2.497797599993646,
+    "data_digest": "96754c327f40432b2b84146d3be02ce171b96b3a07597256f95dbd3287e3e021",
+    "optimization": "likelihood only; Gaussian beta prior does not enter AIC/BIC"
+  },
+  "extra": {
+    "id": "hernquist",
+    "tracer": "hernquist",
+    "posterior_priors": [
+      "flat",
+      "gaussian",
+      "fixed0",
+      "fixed018"
+    ],
+    "jeans": {
+      "nrad": 4096,
+      "extent": 1000000,
+      "abel_nodes": 128,
+      "angular_nodes": 192,
+      "psf_sigma_arcsec": 0
+    }
+  }
+}

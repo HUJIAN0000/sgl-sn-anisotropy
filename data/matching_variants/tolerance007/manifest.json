@@ -1,0 +1,16 @@
+{
+  "N": 111,
+  "definition": {
+    "id": "tolerance007",
+    "tolerance": 0.07
+  },
+  "file_sha256": {
+    "cov_cross.txt": "6e4671fd397df1c9c8730e0259635b624fa63852915e21c353f1d1f354ff46b6",
+    "cov_lens.txt": "0763d933dd5612c0c5ea343d495da7712a96909511a7ab86073a71fd1f3faced",
+    "cov_source.txt": "752596b30c9789e579b88b08fed8460da600677ed88edb38ef3f5ff0bafd2c05",
+    "matched_catalog.csv": "9fa436e97597febda0584c492a6b1a75a58ca4fe02e2fd5205f3db0fa1705a2d",
+    "matcher_summary.json": "2a5a1f39e5060772b1d34e26c8fb913bba91219c2cd36559ac1a330af3fef2a8",
+    "original_row_index_map.csv": "ffa417bf3aeb40d4b16da756f2d9a8431d494c4367c61676831730276d0002f8"
+  },
+  "source": "Direct supplied matcher, new raw inputs, explicit original covariance row indices"
+}

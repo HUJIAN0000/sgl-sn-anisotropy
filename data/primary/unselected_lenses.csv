@@ -1,0 +1,24 @@
+Lens name,zl,zs,thetaE,thetaeff,thetaap,sigma_ap,dsigma_ap,delta,Survey name,exclusion_reason
+SDSSJ0029-0055,0.227,0.931,0.96,2.16,1.5,229,18,2.2184,SLACS,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0157-0056,0.513,0.924,0.79,1.06,1.5,295,47,2.2678,SLACS,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0252+0039,0.28,0.982,1.04,1.39,1.5,164,12,2.1353,SLACS,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0330-0020,0.351,1.071,1.1,1.2,1.5,212,21,2.2781,SLACS,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0324+0045,0.321,0.9199,0.55,1.67,1.5,183,19,2.0139,S4TM,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0753+3416,0.1371,0.9628,1.23,1.89,1.5,208,12,2.1606,S4TM,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0944-0147,0.539,1.179,0.73,0.48,1.0,204,34,2.2784,BELLS,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ1631+1854,0.408,1.086,1.63,1.43,1.0,272,14,2.1707,BELLS,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0747+4448,0.437,0.897,0.61,0.92,1.0,281,52,2.2692,BELLS,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0747+5055,0.438,0.898,0.75,1.09,1.0,328,60,2.1697,BELLS,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0029+2544,0.5869,2.4504,1.34,0.49,1.0,241,45,2.0862,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0201+3228,0.3957,2.8209,1.7,2.32,1.0,256,20,2.0944,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0237-0641,0.4859,2.2491,0.65,1.05,1.0,290,89,2.2446,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0742+3341,0.4936,2.3633,1.22,0.89,1.0,218,28,2.2074,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0755+3445,0.7224,2.6347,2.05,2.89,1.0,272,52,2.1988,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0856+2010,0.5074,2.2335,0.98,0.51,1.0,334,54,2.1226,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ0918+5104,0.5811,2.403,1.6,0.57,1.0,298,49,2.0674,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ1110+2808,0.6073,2.3999,0.98,1.45,1.0,191,39,2.3536,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ1116+0915,0.5501,2.4536,1.03,0.98,1.0,274,55,2.3297,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ1141+2216,0.5858,2.7624,1.27,0.44,1.0,285,44,2.0104,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ1201+4743,0.5628,2.1258,1.18,0.48,1.0,239,43,1.8471,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ1226+5457,0.498,2.7322,1.37,0.56,1.0,248,26,2.1086,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates
+SDSSJ2228+1205,0.5305,2.8324,1.28,0.53,1.0,255,50,2.1638,BELLS GALLERY,Not selected by maximum-cardinality / minimum-cost assignment; not necessarily without candidates

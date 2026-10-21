@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "main_posteriors": 16,
+  "delta_posteriors": 8,
+  "pivot_redshift": 0.1959,
+  "pivot_predictor": -0.8442909969282267,
+  "accuracy_points": 192,
+  "accepted_delta_paths": [
+    {
+      "scenario": "independent005",
+      "prior": "flat",
+      "passed": true,
+      "steps": 80000,
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\production\\delta\\independent005\\flat",
+      "source": "original_serial"
+    },
+    {
+      "scenario": "independent005",
+      "prior": "fixed0",
+      "passed": true,
+      "steps": 120000,
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\production\\delta_parallel\\independent005\\fixed0",
+      "source": "parallel_extension"
+    },
+    {
+      "scenario": "independent010",
+      "prior": "flat",
+      "passed": true,
+      "steps": 120000,
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\production\\delta_parallel\\independent010\\flat",
+      "source": "parallel_extension"
+    },
+    {
+      "scenario": "independent010",
+      "prior": "fixed0",
+      "passed": true,
+      "steps": 320000,
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\production\\delta_parallel\\independent010\\fixed0",
+      "source": "parallel_extension"
+    },
+    {
+      "scenario": "independent005_coherent005",
+      "prior": "flat",
+      "passed": true,
+      "steps": 80000,
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\production\\delta\\independent005_coherent005\\flat",
+      "source": "original_serial"
+    },
+    {
+      "scenario": "independent005_coherent005",
+      "prior": "fixed0",
+      "passed": true,
+      "steps": 80000,
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\production\\delta\\independent005_coherent005\\fixed0",
+      "source": "original_serial"
+    },
+    {
+      "scenario": "statistical_1pct_upper_bound",
+      "prior": "flat",
+      "passed": true,
+      "steps": 80000,
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\production\\delta\\statistical_1pct_upper_bound\\flat",
+      "source": "original_serial"
+    },
+    {
+      "scenario": "statistical_1pct_upper_bound",
+      "prior": "fixed0",
+      "passed": true,
+      "steps": 80000,
+      "path": "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\production\\delta\\statistical_1pct_upper_bound\\fixed0",
+      "source": "original_serial"
+    }
+  ],
+  "accuracy": [
+    {
+      "case": "hernquist",
+      "prior": "fixed0",
+      "passed": true
+    },
+    {
+      "case": "hernquist",
+      "prior": "gaussian",
+      "passed": true
+    },
+    {
+      "case": "hernquist",
+      "prior": "flat",
+      "passed": true
+    },
+    {
+      "case": "hernquist",
+      "prior": "fixed018",
+      "passed": true
+    },
+    {
+      "case": "sersic_n4",
+      "prior": "fixed0",
+      "passed": true
+    },
+    {
+      "case": "sersic_n4",
+      "prior": "flat",
+      "passed": true
+    },
+    {
+      "case": "sersic_n4",
+      "prior": "fixed018",
+      "passed": true
+    },
+    {
+      "case": "sersic_n4",
+      "prior": "gaussian",
+      "passed": true
+    }
+  ],
+  "visual_review": "Reviewed all 24 global trace sheets: no obvious persistent between-run separation or post-burn drift seen. All 18 clean manuscript pages, 18 marked pages, and 4 response pages reviewed. Numerical convergence is conditional on the specified model and support.",
+  "traces": [
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_powerlaw_flat.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_powerlaw_fixed018.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_powerlaw_fixed0.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_powerlaw_gaussian.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_hernquist_fixed018.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_hernquist_flat.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_hernquist_fixed0.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_hernquist_gaussian.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_sersic_n4_flat.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_sersic_n4_fixed0.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_sersic_n4_fixed018.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_sersic_n4_gaussian.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_p3_powerlaw_flat.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_p3_powerlaw_fixed0.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_p3_powerlaw_gaussian.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_main_p3_powerlaw_fixed018.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_delta_independent005_flat.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_delta_independent005_fixed0.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_delta_independent010_flat.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_delta_independent010_fixed0.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_delta_independent005_coherent005_flat.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_delta_independent005_coherent005_fixed0.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_delta_statistical_1pct_upper_bound_flat.png",
+    "D:\\ai\\paperproject\\aa61321_rebuild_20261020\\results\\final_audit\\trace_delta_statistical_1pct_upper_bound_fixed0.png"
+  ],
+  "note": "Boundary fractions are descriptive. No posterior is censored or prior changed."
+}

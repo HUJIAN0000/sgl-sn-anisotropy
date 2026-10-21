@@ -1,0 +1,34 @@
+[
+  {
+    "case": "powerlaw",
+    "passed": true
+  },
+  {
+    "case": "hernquist",
+    "passed": true
+  },
+  {
+    "case": "sersic_n2",
+    "passed": true
+  },
+  {
+    "case": "sersic_n4",
+    "passed": true
+  },
+  {
+    "case": "sersic_n6",
+    "passed": true
+  },
+  {
+    "case": "p3_powerlaw",
+    "passed": true
+  },
+  {
+    "case": "hernquist_psf064",
+    "passed": true
+  },
+  {
+    "case": "sersic_n4_psf064",
+    "passed": true
+  }
+]

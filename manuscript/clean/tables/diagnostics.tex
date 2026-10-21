@@ -1,0 +1,37 @@
+\begin{tabular}{lllrrr}
+\toprule
+Analysis & Model or slope-error scenario & $\beta$ treatment & Steps & $\max\widehat R$ & Min. approx. ESS \\
+\midrule
+Main & Power law & Free, flat & 25000 & 1.0057 & 44560 \\
+Main & Power law & Free, Gaussian & 25000 & 1.0055 & 56369 \\
+Main & Power law & Fixed 0 & 25000 & 1.0045 & 68024 \\
+Main & Power law & Fixed 0.18 & 25000 & 1.0032 & 65834 \\
+\addlinespace[3pt]
+Main & Hernquist & Free, flat & 25000 & 1.0079 & 47316 \\
+Main & Hernquist & Free, Gaussian & 25000 & 1.0041 & 57722 \\
+Main & Hernquist & Fixed 0 & 25000 & 1.0026 & 71119 \\
+Main & Hernquist & Fixed 0.18 & 15000 & 1.0080 & 38886 \\
+\addlinespace[3pt]
+Main & S\'ersic $n=4$ & Free, flat & 25000 & 1.0064 & 41319 \\
+Main & S\'ersic $n=4$ & Free, Gaussian & 25000 & 1.0041 & 56329 \\
+Main & S\'ersic $n=4$ & Fixed 0 & 15000 & 1.0079 & 38693 \\
+Main & S\'ersic $n=4$ & Fixed 0.18 & 15000 & 1.0045 & 39428 \\
+\addlinespace[3pt]
+Main & P3 power law & Free, flat & 25000 & 1.0069 & 34611 \\
+Main & P3 power law & Free, Gaussian & 25000 & 1.0047 & 45247 \\
+Main & P3 power law & Fixed 0 & 25000 & 1.0037 & 53122 \\
+Main & P3 power law & Fixed 0.18 & 25000 & 1.0044 & 50849 \\
+\addlinespace[3pt]
+Latent slopes & $\sigma_{\delta,i}=0.01\widehat\delta_i$ & Free, flat & 80000 & 1.0001 & 50518 \\
+Latent slopes & $\sigma_{\delta,i}=0.01\widehat\delta_i$ & Fixed 0 & 80000 & 1.0001 & 72233 \\
+\addlinespace[3pt]
+Latent slopes & $\sigma_\delta=0.05$ & Free, flat & 80000 & 1.0001 & 43017 \\
+Latent slopes & $\sigma_\delta=0.05$ & Fixed 0 & 120000 & 1.0001 & 73788 \\
+\addlinespace[3pt]
+Latent slopes & $\sigma_\delta=0.10$ & Free, flat & 120000 & 1.0001 & 39199 \\
+Latent slopes & $\sigma_\delta=0.10$ & Fixed 0 & 320000 & 1.0001 & 67473 \\
+\addlinespace[3pt]
+Latent slopes & $\sigma_\delta=0.05$, $\sigma_b=0.05$ & Free, flat & 80000 & 1.0001 & 42228 \\
+Latent slopes & $\sigma_\delta=0.05$, $\sigma_b=0.05$ & Fixed 0 & 80000 & 1.0002 & 25868 \\
+\bottomrule
+\end{tabular}

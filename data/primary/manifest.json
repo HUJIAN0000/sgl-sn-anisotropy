@@ -1,0 +1,30 @@
+{
+  "file_sha256": {
+    "cov_cross.txt": "d3375329b7cd18916133a7d8c2b92bf6a8c3932b43e5243a9b5e666337a543c6",
+    "cov_lens.txt": "42a3faafb4afbf43ab386f8a8717fdb934c88b1cb1312b95161c31c3e86a9802",
+    "cov_source.txt": "93f0ae09c13494067a42e2d7db8d2aada5b62064a2fdf3f9dacb7a8eed1a9465",
+    "distance_input_diagnostics.csv": "9d65fbf6eefc1c542c82fb8dbba951120efbe1fd811d350e110b39786caa01ef",
+    "matched_catalog.csv": "02135c1adbc46af7e07c029c8a53831dd9f8c6a3ad4cbd120b52a798011a482b",
+    "original_row_index_map.csv": "ab40cafeef8598473622dc742e22fabb49889ff188638ffd7598c5e304b73917",
+    "unselected_lenses.csv": "3e1e9cf2dd8eb5ea69e7394d92f86a6147088fe1727de35e3c219dd909906c36"
+  },
+  "source": "Fresh raw-input pairing with author CosmoMatcher 1.4.3",
+  "N": 107,
+  "raw_input_sha256": {
+    "Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+    "Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc",
+    "sgls130.CSV": "5894d9ef542a9bc02ecbb0481db76d6496fe630f4cbaeb9b2d8e2e2f2cbc8215"
+  },
+  "matcher_sha256": "9f7f3d233f8b7f17571c1ec7e2389e51407a4d5e60728952bb84bb756d41c956",
+  "configuration_sha256": "2445b3692c3ff9ce671ce4e1c0996a57a55d4bfd5b1eb0dbf1f1ee276b3454a9",
+  "relative_R_error_gt020": 12,
+  "baseline_R_convention": "Target redshifts; explicit finite-matching approximation",
+  "matched_SN_ratio_convention": "Actual counterpart zHD; exported by supplied matcher",
+  "old_comparison": {
+    "historical_N": 107,
+    "new_N": 107,
+    "shared_lenses": 107,
+    "identical_magnitude_pairs": 40,
+    "note": "Magnitude-pair agreement only; not a substitute for original-ID verification"
+  }
+}

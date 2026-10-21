@@ -1,0 +1,82 @@
+{
+  "signature": "fb66c33dbe76aa3ff1ee94f962ff93e13e1118c1b5f9cbcb1a19fd22de2b314b",
+  "result": {
+    "spec": {
+      "framework": "P2",
+      "beta_prior": "fixed018",
+      "domain": "convergent_jeans",
+      "tracer": "sersic"
+    },
+    "names": [
+      "gamma0",
+      "gamma_z",
+      "f_int"
+    ],
+    "N": 107,
+    "k": 3,
+    "theta": [
+      2.081457601526843,
+      -0.6473672844135963,
+      0.08015817939659109
+    ],
+    "lnL": -513.7453596050964,
+    "AIC": 1033.4907192101928,
+    "BIC": 1041.5092057135785,
+    "starts": [
+      {
+        "theta": [
+          2.0814575912963074,
+          -0.6473672707208585,
+          0.08015817852327253
+        ],
+        "lnL": -513.7453596050965,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.081457601526843,
+          -0.6473672844135963,
+          0.08015817939659109
+        ],
+        "lnL": -513.7453596050964,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          2.081457595253857,
+          -0.6473672745236985,
+          0.08015817497988037
+        ],
+        "lnL": -513.7453596050965,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      }
+    ],
+    "multi_start_lnL_range": 1.1368683772161603e-13,
+    "optimizer_agreement_checked": true,
+    "elapsed_seconds": 2.620683300017845,
+    "data_digest": "96754c327f40432b2b84146d3be02ce171b96b3a07597256f95dbd3287e3e021",
+    "optimization": "likelihood only; Gaussian beta prior does not enter AIC/BIC"
+  },
+  "extra": {
+    "id": "sersic_n4_psf064",
+    "tracer": "sersic",
+    "posterior_priors": [],
+    "jeans": {
+      "sersic_n": 4,
+      "nrad": 4096,
+      "extent": 1000000,
+      "abel_nodes": 128,
+      "angular_nodes": 192,
+      "psf_sigma_arcsec": 0.64
+    }
+  }
+}

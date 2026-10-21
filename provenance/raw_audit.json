@@ -1,0 +1,60 @@
+{
+  "lens_rows": 130,
+  "lens_names_unique": true,
+  "survey_counts": {
+    "SLACS": 57,
+    "S4TM": 38,
+    "BELLS": 21,
+    "BELLS GALLERY": 14
+  },
+  "delta_range": [
+    1.8471,
+    2.3924
+  ],
+  "supernova_rows": 1701,
+  "distinct_CID": 1543,
+  "duplicate_CID_observation_rows": 285,
+  "covariance_shape": [
+    1701,
+    1701
+  ],
+  "covariance_validation": {
+    "shape": [
+      1701,
+      1701
+    ],
+    "symmetric": true,
+    "psd_checked": true,
+    "minimum_eigenvalue_if_needed": null,
+    "asymmetry_max_abs": 3.0000000000038676e-08,
+    "asymmetry_relative_to_matrix_max": 7.671984801296533e-08,
+    "symmetry_rtol": 1e-06,
+    "roundoff_symmetrized_for_validation": true,
+    "roundoff_correction_applied": true
+  },
+  "covariance_positive_definite": true,
+  "diagonal_vs_table_max_abs": 2.2674203129,
+  "input_sha256": {
+    "Pantheon+SH0ES.dat": "1cb0fc379ef066afdc2ffd1857681cc478024570d8a3eba284fb645775198cf8",
+    "Pantheon+SH0ES_STAT+SYS.cov": "abf806d966485e64afdb359c87bffc0ecc00d05eff0a31ced66f247385df0fdc",
+    "sgls130.CSV": "5894d9ef542a9bc02ecbb0481db76d6496fe630f4cbaeb9b2d8e2e2f2cbc8215"
+  },
+  "tools_sha256": {
+    "cosmo_tools.py": "3744b658954bbb1fa54e3f77d6bc1eea0f3ef0a1eef93cce6a6a79e5d24c0100",
+    "CosmoMatcherv1.4.3.py": "9f7f3d233f8b7f17571c1ec7e2389e51407a4d5e60728952bb84bb756d41c956"
+  },
+  "environment": {
+    "python": "3.11.16",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.1",
+    "emcee": "3.1.6",
+    "h5py": "3.16.0",
+    "Jinja2": "3.1.6"
+  },
+  "parent_161_minus_31": "Author supplied provenance; excluded 31 objects not present for independent verification",
+  "redshift_convention": "zHD retained as in earlier pipeline; zHEL and zCMB preserved for explicit sensitivity checks",
+  "error_convention": "STAT+SYS used once; no additional SN diagonal variance added"
+}

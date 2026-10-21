@@ -1,0 +1,377 @@
+% Revised manuscript v4 for A&A article aa61321-26.
+\documentclass{aa}
+\usepackage{amsmath,amssymb,bm,booktabs,graphicx,txfonts}
+\usepackage{hyperref}
+\providecommand{\aap}{A\&A}
+\providecommand{\apj}{ApJ}
+\providecommand{\apjl}{ApJL}
+\providecommand{\aj}{AJ}
+\providecommand{\mnras}{MNRAS}
+\providecommand{\prd}{Phys.~Rev.~D}
+\providecommand{\pasp}{PASP}
+\providecommand{\araa}{ARA\&A}
+\newcommand{\kms}{\ensuremath{\mathrm{km\,s^{-1}}}}
+\newcommand{\lcdm}{\ensuremath{\Lambda\mathrm{CDM}}}
+\newcommand{\pantheon}{Pantheon$+$}
+\newcommand{\bic}{\ensuremath{\mathrm{BIC}}}
+\newcommand{\aic}{\ensuremath{\mathrm{AIC}}}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,
+pdftitle={Anisotropy and tracer-profile assumptions in aperture-based strong-lens dynamics},
+pdfauthor={Jian Hu, Yi Liu, Jian-Ping Hu, Zhongmu Li}}
+% Compatibility with the supplied A&A class (2016) and modern LaTeX.
+\makeatletter
+\let\revision@enddocument\enddocument
+\def\enddocument{\NAT@swatrue\let\bibcite\NAT@testdef\revision@enddocument}
+\renewcommand*\aa@pageof{, page \thepage{} of \pageref*{LastPage}}
+\makeatother
+\begin{document}
+
+\title{Anisotropy and tracer-profile assumptions in aperture-based strong-lens dynamics}
+\subtitle{Conditional inference from supernova distance ratios and unresolved stellar kinematics}
+\titlerunning{Anisotropy and tracer-profile sensitivity}
+\authorrunning{Hu et al.}
+\author{Jian Hu\inst{1}\and Yi Liu\inst{2}\and Jian-Ping Hu\inst{3}\and Zhongmu Li\inst{1}}
+\institute{Institute of Astronomy and Information, Dali University, Dali 671003,
+People's Republic of China\\\email{dg1626002@smail.nju.edu.cn}
+\and Department of Engineering, Dali University, Dali 671003, People's Republic of China
+\and School of Astronomy and Space Science, Nanjing University, Nanjing 210093, People's Republic of China}
+\date{Received ---; accepted ---}
+
+
+\abstract
+{Single-aperture stellar kinematics jointly constrain the mass distribution, tracer light profile, and velocity anisotropy. Their coupling affects the interpretation of an inferred anisotropy.}
+{We quantify how tracer-profile assumptions and data treatment affect common-anisotropy comparisons and inferred mass-density slopes in a compiled galaxy-scale lens sample.}
+{We analyse 107 lenses using distinct \pantheon\ supernova counterparts, spatial flatness, distance duality, and the full supernova covariance. We compare the individual-slope power-law tracer with Hernquist and S\'ersic profiles using measured effective radii. Numerical Jeans solutions, likelihood comparisons, posterior distributions, and controlled recovery experiments quantify the effects of tracer representation.}
+{The power-law fixed-minus-free Bayesian information criterion differences are 6.74 for isotropy and 41.51 for fixed $\beta=0.18$, compared with $-3.89$ and $-2.26$ for Hernquist and $-4.67$ and $-4.30$ for S\'ersic $n=4$. The preference also changes with S\'ersic index. Removing 12 systems with linearised distance-ratio uncertainty above 20\% reduces the power-law isotropy comparison to 2.51. In isotropic S\'ersic $n=4$ and Hernquist simulations, power-law fits yield $\Delta\mathrm{BIC}_0>6$ in 60.0\% and 50.0\% of realisations, respectively, compared with 0.5\% and 1.0\% for matched-tracer fits.}
+{The preference for a common free anisotropy parameter depends on the tracer representation and sample composition. Controlled recovery identifies tracer mismatch as one mechanism that can generate this preference within the adopted aperture models. Physical interpretation requires joint treatment of photometry, distance uncertainties, and kinematic weighting.}
+\keywords{gravitational lensing: strong -- galaxies: elliptical and lenticular, cD -- galaxies: kinematics and dynamics -- methods: statistical}
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+
+Strong gravitational lensing (SGL) connects the projected mass of a foreground galaxy to the geometry between the observer, lens, and background source. Combining lensing observables with stellar kinematics constrains the mass distribution of early-type galaxies (ETGs) and provides information on cosmological distances \citep{Treu2010,Koopmans2006,Cao2015}. Time-delay cosmography additionally uses measured delays between variable images to infer distances and the Hubble constant $H_0$ \citep{Suyu2017,Wong2020}. Here we study galaxy--galaxy lenses using supernova (SN) distance ratios and aperture-integrated stellar dispersions.
+
+A central difficulty is that lensing and dynamical observables constrain different combinations of the mass profile and stellar orbital structure. Imaging alone admits the mass-sheet degeneracy, while dynamical inference depends on the tracer light distribution, projection, and velocity anisotropy \citep{Falco1985,Schneider2013,Birrer2020}. Increasing the sample size reduces statistical errors but does not automatically control errors from an inadequate model. Potential biases must therefore be identified, constrained with additional data, and included in the uncertainty budget. Stellar anisotropy is not intrinsically a systematic error: the relevant issue is whether the assumed anisotropy model and its uncertainty are adequate for the data.
+
+Current analyses do not generally fix all lenses to one universal anisotropy value. The TDCOSMO collaboration's 2025 analysis uses a population treatment of spatially constant anisotropy, with uncertainty in the population mean and scatter \citep{TDCOSMO2025}. Spatial constancy within a galaxy is distinct from fixing the same known value across galaxies. \citet{Fores2026} examine anisotropy alongside point-spread-function (PSF), light-profile, and kinematic-measurement effects. Using simulated galaxies and spatially resolved kinematics, \citet{Verma2026} find that the recovery of $H_0$ depends on the adopted anisotropy family and on whether lensing and dynamics are modelled jointly. These studies emphasise the interaction between anisotropy and other modelling choices, rather than the inevitability of an anisotropy-induced bias.
+
+Resolved spectroscopy is also advancing rapidly. The James Webb Space Telescope (JWST) Near-Infrared Spectrograph (NIRSpec) integral field unit (IFU) has provided two-dimensional stellar kinematics for RXJ1131$-$1231 \citep{Shajib2026}. \citet{Knabel2026} extend such measurements to HE0435$-$1223, PG1115$+$080, and WFI2033$-$4723, while \citet{Mozumdar2026} present resolved measurements for B1608$+$656 and SDSSJ1206$+$4332, including rotation and neighbouring deflectors. These observations supply radial and spatial information that a single aperture dispersion cannot provide. Our analysis quantifies modelling sensitivity in the complementary regime of compiled aperture-integrated measurements.
+
+
+We use the individual photometric slopes and lens compilation of \citet{stz1902}, together with supernova-based distance ratios \citep{Hu2023p,Hu2023,Geng2025}, to quantify the sensitivity of a common-anisotropy preference to the tracer profile and compiled-data approximations. Isotropy and $\beta=0.18$ are reference models; the historical $0.18\pm0.13$ prescription \citep{Gerhard2001,stz1902} is not a universal description of contemporary lens analyses. Our comparison also separates a fixed value from a probability distribution over values.
+
+Recent work shows how anisotropy interacts with light-profile modelling and kinematic weighting \citep{Fores2026,Verma2026}. We quantify these interactions in a different observational regime: a catalogue of unresolved aperture dispersions with supernova-derived distance inputs. We compare tracer families on the same matched catalogue and covariance, measure the resulting changes in anisotropy and density-slope inference, and use controlled recovery experiments to assess whether tracer mismatch can generate an effective anisotropy preference. The photometric information entering each tracer family is specified in Sect.~\ref{sec:tracers}; its implications are discussed in Sect.~\ref{sec:limitations}.
+
+Section~\ref{sec:data} defines the data and forward models. Section~\ref{sec:results} presents the likelihood and posterior comparisons, recovery experiments, and sensitivities. Section~\ref{sec:conclusions} summarises their interpretation. The appendices document analytic normalisation, covariance propagation, numerical verification, and reproducibility.
+
+\section{Data and forward modelling}\label{sec:data}
+\subsection{Lens sample and survey provenance}
+\label{sec:lenses}
+
+Our parent catalogue consists of 130 lenses from the compilation of \citet{stz1902} for which individual photometric slopes were provided by Y.~Chen. We use the subset with the required photometric and kinematic measurements. The observations originate from the Sloan Lens Advanced Camera for Surveys (SLACS) Survey, SLACS for the Masses (S4TM), the Baryon Oscillation Spectroscopic Survey (BOSS) Emission-Line Lens Survey (BELLS), and its Galaxy--Ly$\alpha$ Emitter Systems extension (BELLS GALLERY). Table~\ref{tab:surveys} lists the parent and matched counts with the original survey references. SLACS and S4TM dominate the matched sample, which retains only one BELLS GALLERY lens.
+
+\begin{table*}[t]
+\centering
+\caption{Provenance of the parent catalogue and the baseline matched sample. Counts refer to this analysis, not to the total size of each original survey.}
+\label{tab:surveys}
+\begin{tabular}{lrrl}
+\toprule
+Survey & Parent & Matched & Original observational references \\
+\midrule
+SLACS & 57 & 53 & \citet{Bolton2006,Bolton2008,Auger2009,Auger2010} \\
+S4TM & 38 & 36 & \citet{Shu2015,Shu2017} \\
+BELLS & 21 & 17 & \citet{Brownstein2012} \\
+BELLS GALLERY & 14 & 1 & \citet{Shu2016a,Shu2016b} \\
+\midrule
+Total & 130 & 107 & \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The lens observables are the lens and source redshifts $(z_l,z_s)$, Einstein radius $\theta_E$, aperture radius $\theta_{\rm ap}$, effective light radius $\theta_{\rm eff}$, aperture velocity dispersion $\sigma_{\rm ap}$ and its quoted statistical uncertainty, and the individual luminosity slope $\delta_i$. We use the catalogue measurements directly. The photometric measurements use Hubble Space Telescope (HST) F814W imaging for SLACS, S4TM, and BELLS, and F606W imaging for BELLS GALLERY, as described by \citet{stz1902}.
+
+
+We use the individual aperture and effective radii listed in the catalogue. We interpret $\theta_{\rm ap}$ as a circular aperture radius and predict the second moment within that aperture. The listed dispersions agree with Table A1 of \citet{stz1902}, before that paper's transformation to $R_e/2$. Direct modelling of the original aperture therefore avoids applying the transformation twice. The heterogeneous spectroscopic extraction and light weighting remain relevant to the sensitivity tests.
+
+\subsection{Supernova distance ratios and matching}\label{sec:pairing}
+We use the corrected apparent magnitudes $m_b$ and full statistical-plus-systematic covariance from the official \pantheon\ release \citep{Brout2022,Scolnic2022}. We match supernovae to the lens and source redshifts using $z_{\rm HD}$ and a fractional comoving-distance tolerance of 0.05 in a flat fiducial background with $\Omega_m=0.30$. The two-stage mixed-integer linear programme first maximises the number of complete systems and then minimises squared fractional mismatch. Each identifier in the release's CID field is used once globally. A catalogue-order tie break selects a reproducible assignment. The primary sample contains 107 lenses and 214 distinct CIDs. We extract all covariance blocks using the original supernova row indices. The matching metric and fiducial background specify the assignment, while the dynamical fit uses the resulting supernova distance ratios.
+
+For supernovae at the target lens and source redshifts, spatial flatness and distance duality give
+\begin{equation}\label{eq:Robs}
+R\equiv\frac{D_{ls}}{D_s}=1-\frac{\chi_l}{\chi_s}
+=1-10^{0.2(m_{b,l}-m_{b,s})}\frac{1+z_s}{1+z_l}.
+\end{equation}
+The common standardised absolute magnitude and an overall distance scale cancel. Differential calibration and redshift-dependent standardisation remain relevant. In practice, the matched supernova redshifts differ from the target redshifts, while the explicit factors in Eq.~(\ref{eq:Robs}) use the target values. The resulting $R_{\rm SN}$ is therefore a finite-matching approximation. We assess finite matching through alternative tolerances, an input-order control, and model-assisted redshift corrections (Sect.~\ref{sec:distancechecks}).
+
+\subsection{Common mass model and anisotropy}\label{sec:P2}
+The baseline two-coefficient (P2) mass model is spherical with $\rho(r)\propto r^{-\gamma}$ and
+\begin{equation}\label{eq:P2}
+\gamma_i=\gamma_0+\gamma_z z_{l,i}.
+\end{equation}
+The intercept $\gamma_0$ gives the extrapolated zero-redshift value of the sample relation, distinct from a radial gradient within a lens. We also report $\gamma_p=\gamma_0+z_p\gamma_z$ at the sample median $z_p=0.1959$. This is a transformation of each joint posterior sample, without changing the original prior.
+
+The constant anisotropy is $\beta\equiv\beta_{\rm ani}=1-(\sigma_\theta^2+\sigma_\phi^2)/(2\sigma_r^2)$, shared by the sample. The hypotheses are a free common $\beta$, fixed isotropy, and fixed $\beta=0.18$. Shared spatial constancy is a restrictive model, distinct from a population distribution with intrinsic anisotropy scatter.
+
+\subsection{Power-law and curved tracers}\label{sec:tracers}
+For the power-law tracer, $\nu_i(r)\propto r^{-\delta_i}$. The individual slopes were obtained by fitting a PSF-convolved projected profile $I(R)\propto R^{1-\delta_i}$ within $\theta_{\rm eff}/2$ \citep{stz1902}. In 92 of our 107 lenses, the spectroscopic aperture extends beyond this photometric fitting radius: the median aperture-to-fit-radius ratio is 1.53 and the maximum is 4.55. A global power-law tracer thus extrapolates the fitted inner profile over the region contributing to the aperture dispersion. \citet{stz1902} report relative statistical slope errors below 1\%, while their population dispersion 0.085 describes variation between galaxies. Individual error estimates and imaging-fit records are unavailable for the supplied slopes. The analytic aperture prediction is
+\begin{equation}\label{eq:sigma_th}
+\sigma_{\rm th}^2=\frac{c^2}{2\sqrt\pi}\frac{\theta_E}{R_{\rm SN}}
+ F(\gamma,\delta_i,\beta)\left(\frac{\theta_{\rm ap}}{\theta_E}\right)^{2-\gamma},
+\end{equation}
+where $c$ is the speed of light, angular radii in the prefactor are in radians, and $F$ is given in Appendix~\ref{sec:analytic}.
+
+For comparison, we use a Hernquist tracer \citep{Hernquist1990}, with projected half-light radius $R_e$ corresponding to the catalogue angular radius $\theta_{\rm eff}$,
+\begin{equation}
+\nu(r)\propto\frac{1}{r(r+a)^3},\qquad a=R_e/1.81527,
+\end{equation}
+and the exact Abel deprojection of the projected S\'ersic form
+\begin{equation}
+I(R)\propto\exp[-b_n(R/R_e)^{1/n}],\qquad
+\nu(r)=-\frac1\pi\int_r^\infty\frac{\mathrm d I/\mathrm d R}{\sqrt{R^2-r^2}}\,\mathrm dR.
+\end{equation}
+The constant $b_n$ imposes the projected half-light condition. We use $n=4$ for the main S\'ersic comparison and $n=2$ and 6 as sensitivity scenarios. These models use the measured effective radii and assumed profile families, replacing the individual inner-slope constraint used by the power-law model. The comparison therefore tests the overall photometric representation. A common imaging likelihood would be required to isolate curvature while retaining identical photometric information.
+
+For each curved tracer, we solve the spherical Jeans equation \citep{Binney1980,MamonLokas2005},
+\begin{equation}
+\nu(r)\sigma_r^2(r)=r^{-2\beta}\int_r^\infty\nu(s)\frac{GM(s)}{s^2}s^{2\beta}\,\mathrm ds,
+\end{equation}
+normalising the power-law mass by its Einstein projected mass and the stated $R_{\rm SN}$. We then project the pressure and integrate the line-of-sight second moment over the circular aperture. Both the moment numerator and light denominator use the same aperture weighting. The baseline has no PSF convolution; additional cases use an assumed circular Gaussian PSF with $\sigma_{\rm PSF}=0.64$ arcsec. This assumed seeing value defines a PSF sensitivity scenario for the catalogue.
+
+We evaluate the numerical integrals on 4096 logarithmic radial nodes, with 128 Abel and 192 angular quadrature nodes. A Chebyshev representation accelerates repeated evaluations. Appendix~\ref{sec:numerical} describes direct-quadrature comparisons, independent off-grid tests, and checks at doubled resolution.
+
+\subsection{Conditional likelihood and parameter domain}\label{sec:stats}
+In matched-catalogue order, the magnitude-difference covariance is
+\begin{equation}\label{eq:Cdifference}
+\mathbf C_{\Delta m}=\mathbf C_{ll}+\mathbf C_{ss}-\mathbf C_{ls}-\mathbf C_{ls}^{T}.
+\end{equation}
+First-order derivatives propagate it to $\mathbf C_R$ and then to $\mathbf C_{\sigma,{\rm SN}}$ (Appendix~\ref{sec:propagation}). For the dispersion residual $\mathbf D=\boldsymbol\sigma_{\rm ap}-\boldsymbol\sigma_{\rm th}$,
+\begin{equation}\label{eq:Ctotal}
+\mathbf C_{\rm tot}=\mathbf C_{\sigma,{\rm SN}}+
+\operatorname{diag}\!\left[\sigma_{\rm stat}^2+(0.03\sigma_{\rm ap})^2+(f_{\rm int}\sigma_{\rm ap})^2\right],
+\end{equation}
+and
+\begin{equation}\label{eq:likelihood}
+\ln\mathcal L=-\tfrac12[\mathbf D^T\mathbf C_{\rm tot}^{-1}\mathbf D+
+\ln\det\mathbf C_{\rm tot}+N\ln(2\pi)].
+\end{equation}
+The propagated covariance is recomputed as the model changes, with all cross-system terms retained and Cholesky factorisation used for evaluation. The 3\% term is phenomenological and does not explicitly model coherent calibration or geometry. The fractional-scatter parameter $f_{\rm int}$ is distinct from $\delta_i$. Its observational dispersion anchor is held fixed during parameter inference.
+
+This is a conditional Gaussian approximation, not a latent-supernova likelihood. In particular, the nonlinear transformation of uncertain magnitudes can be non-Gaussian when $R$ is poorly constrained. Section~\ref{sec:distancechecks} quantifies the sensitivity to nonlinear propagation in poorly constrained systems.
+
+The prior boxes are $1<\gamma_0<3$, $-2<\gamma_z<2$, $-1<\beta<1$, and $0<f_{\rm int}<1$, with $1.05<\gamma_i<2.95$ at every lens. The Gaussian free-$\beta$ comparison replaces the uniform beta density by $\mathcal N(0.18,0.13^2)$ truncated to $(-1,1)$. The historical implementation in \citet{stz1902} instead restricted this Gaussian to its mean plus or minus two standard deviations, $[-0.08,0.44]$. Our broad-support Gaussian comparison is consequently not an exact reproduction of that historical prior. For the analytic global power-law moments we additionally impose $1<\delta_i<3$, $1<\xi_i<3$, and $\xi_i>2\beta$, where $\xi_i=\gamma_i+\delta_i-2$. These are convergence conditions, not a proof of a non-negative phase-space distribution function. The curved-tracer integrals are assessed with their own finite-moment domain, without imposing the global power-law $\xi$ restrictions.
+
+We determine each maximum-likelihood estimate (MLE) with three independent differential-evolution searches followed by Nelder--Mead refinement. The maxima must agree within 0.05 in $\ln\mathcal L$ and satisfy the nested likelihood ordering. Each main posterior is sampled with four independent \texttt{emcee} ensembles \citep{ForemanMackey2013} of 32 walkers, discarding 3000 initial steps. We extend the ensembles according to the convergence criteria in Appendix~\ref{sec:numerical}; accepted lengths are listed in Table~\ref{tab:diagnostics}.
+
+For $k$ fitted parameters, the Akaike information criterion (AIC) is $\mathrm{AIC}=2k-2\ln\mathcal L_{\max}$ and the Bayesian information criterion (BIC) is $\mathrm{BIC}=k\ln N-2\ln\mathcal L_{\max}$. We report
+\begin{equation}
+\Delta\mathrm{BIC}_{b}=\mathrm{BIC}_{\beta=b}-\mathrm{BIC}_{\rm free},
+\end{equation}
+so positive values favour the free model under this criterion. BIC with $N$ lens systems is an approximate description for these correlated, model-covariance-dependent data, not a calibrated significance or probability. Flat and Gaussian free-$\beta$ priors share the likelihood maximum and hence the likelihood-based criteria. We compare criteria only within the same data set.
+
+\section{Results and discussion}\label{sec:results}
+\subsection{Tracer-dependent likelihood comparisons}\label{sec:comparison}
+Table~\ref{tab:tracer} and Fig.~\ref{fig:bic} compare likelihood maxima on the newly matched 107-lens catalogue. The individual-slope power-law tracer yields $\Delta\mathrm{BIC}_0=6.74$ and $\Delta\mathrm{BIC}_{0.18}=41.51$. The corresponding values are $-3.89$ and $-2.26$ for Hernquist, and $-4.67$ and $-4.30$ for S\'ersic $n=4$. The criterion preference for freeing the common anisotropy therefore depends on the assumed light profile. 
+
+The isotropic S\'ersic $n=4$ likelihood is $-513.79$, compared with $-514.03$ for the free power-law case, despite fitting one fewer parameter. The $n=2$ case retains $\Delta\mathrm{BIC}_{0.18}=6.61$, while its isotropy comparison is only 0.24. For $n=6$ the differences are $-4.16$ and $-4.55$. The free MLE beta changes from $-0.54$ at $n=2$ to $-0.01$ at $n=4$ and $+0.31$ at $n=6$. A difference near $-\ln107=-4.67$ corresponds to nearly equal likelihood maxima, with the parameter-count penalty favouring the fixed case.
+\begin{table*}[t]\centering\small
+\caption{P2 likelihood maxima. Differences are fixed minus free within each tracer scenario on the same 107 lenses. Pivot slopes use $z_p=0.1959$. PSF and S\'ersic-index choices are assumed scenarios.}\label{tab:tracer}\input{tables/tracer_mle.tex}\end{table*}
+\begin{figure*}[t]\centering\includegraphics[width=.9\textwidth]{figures/tracer_bic.pdf}
+\caption{Tracer and PSF dependence of the fixed-minus-free BIC differences.}\label{fig:bic}\end{figure*}
+\subsection{Slope shifts and posterior dependence}\label{sec:posteriors}
+The power-law MLE zero-redshift intercept changes from 2.194 with free beta to 2.019 and 1.962 at fixed 0 and 0.18. For Hernquist the values are 2.186, 2.125, and 2.076; for S\'ersic $n=4$ they are 2.128, 2.126, and 2.084. At the pivot redshift the power-law values are 2.018, 1.810, and 1.740, compared with 1.995, 1.993, and 1.957 for S\'ersic $n=4$. Thus the sensitivity is also present at a redshift represented in the sample.
+
+Table~\ref{tab:posterior} and Fig.~\ref{fig:posterior} give posterior medians and central 68\% intervals under both free-beta priors and both fixed hypotheses. Every pivot interval is computed from the joint draws. Figure~\ref{fig:p2_joint_comparison} shows the common parameters across the four power-law treatments. Appendix~\ref{sec:joint_posteriors} shows the complete joint posterior distributions. The free-flat power-law posterior has 1.48\% of beta draws within 0.02 of its lower prior bound $-1$.
+\begin{table*}[t]\centering\small\caption{P2 posterior medians and central 68\% intervals. Fixed beta entries have no posterior interval.}\label{tab:posterior}\input{tables/posterior.tex}\end{table*}
+\begin{figure*}[t]\centering\includegraphics[width=.9\textwidth]{figures/posterior_comparison.pdf}\caption{Effective beta and pivot-slope posteriors versus tracer and anisotropy treatment. Crosses denote fixed beta values.}\label{fig:posterior}\end{figure*}
+\begin{figure*}[t]\centering\includegraphics[width=.78\textwidth]{figures/overlay_powerlaw.pdf}\caption{Power-law P2 posterior comparison under all four anisotropy treatments. Only common sampled parameters are displayed; free beta is marginalised over.}\label{fig:p2_joint_comparison}\end{figure*}
+\subsection{Controlled recovery and tracer mismatch}\label{sec:mocks}
+We generate correlated dispersion vectors for four MLE-based generating models: isotropic power law, free-beta power law, isotropic S\'ersic $n=4$, and isotropic Hernquist. There are 200 predetermined realisations per truth. Each vector is fitted with free beta, fixed 0, and fixed 0.18, under both its true tracer and an alternative family. All 800 realisations and their 4800 fitted models pass the specified optimisation checks. Null and alternative experiments use the same noise prescription. The generating dispersion sets the fractional-scatter variance anchor, which remains fixed during fitting. The conditional noise model is held fixed across these paired comparisons.
+
+Table~\ref{tab:mocks} and Fig.~\ref{fig:mocks} report paired comparisons. Under isotropic S\'ersic $n=4$ and Hernquist truths, fitting the power-law tracer produces $\Delta\mathrm{BIC}_0>6$ in 60.0\% and 50.0\% of realisations, respectively, with mean effective-beta shifts of $-0.547$ and $-0.492$. Matched-tracer isotropic fits cross this threshold in only 0.5\% and 1.0\% of those realisations. Under an isotropic power-law truth, the matched power-law rate is 0.5\%. The free-beta power-law truth gives 67.5\% recovery above the threshold under its own family. These frequencies depend on the chosen MLE truths, noise model, catalogue, and threshold. The cross-tracer fits quantify how the specified mismatch can generate an effective anisotropy preference.
+\begin{table*}[t]\centering\small\caption{Conditional recovery experiments, 200 realisations per truth. Threshold frequencies include Wilson 95\% intervals in percent. Biases refer to each stated generative truth.}\label{tab:mocks}\input{tables/mocks.tex}\end{table*}
+\begin{figure*}[t]\centering\includegraphics[width=.9\textwidth]{figures/mock_distributions.pdf}\caption{Truth-matched and alternative-tracer recovery distributions for the same simulated vectors. The line at 6 is a descriptive BIC threshold, not a universal significance.}\label{fig:mocks}\end{figure*}
+\subsection{Distance uncertainty and matching}\label{sec:distancechecks}
+\input{tables/distance_findings.tex}
+Excluding systems above 20\% linearised fractional distance-ratio uncertainty leaves 95 lenses. The power-law isotropy comparison becomes 2.51; Hernquist and S\'ersic $n=4$ give $-4.04$ and $-4.54$. Exclusion changes both uncertainty and sample design, so the difference cannot be attributed uniquely to nonlinear propagation. The likelihood approximation and its implications are discussed in Sect.~\ref{sec:limitations}.
+
+Appendix~\ref{sec:sensitivity} gives corrections for finite redshift mismatch under smooth flat backgrounds with $\Omega_m=0.25$, 0.30, and 0.35, together with a heliocentric-redshift transfer check. These corrections transform both the ratios and covariance. The dependence on the assumed background is included in these comparisons.
+
+We also repeat the two-stage matching at tolerances 0.03 and 0.07, obtaining 104 and 111 lenses. Their power-law isotropy comparisons are 3.69 and 6.90. Reversing the SN input ordering gives another 107-lens catalogue with 78 complete triplets shared with the primary assignment and differences of 6.51 and 41.67 for power law. All three alternatives retain negative isotropy differences for Hernquist and S\'ersic $n=4$ (Table~\ref{tab:matching}). The principal tracer dependence persists across these assignments, while the strength of the power-law preference varies.
+\subsection{Photometric uncertainty and structural control}\label{sec:otherchecks}
+Coherent offsets of each measured $\delta_i$ by $\pm0.05$ and $\pm0.10$ are refitted on the same primary catalogue (Table~\ref{tab:sensitivity}). These assumed offsets probe sensitivity to photometric calibration. We separately integrate over latent slopes with a truncated-normal prior on $(1.001,2.999)$ and enforce the dynamical convergence domain jointly with the global parameters. Four independent chains use blocked elliptical-slice updates for Gaussian latent coordinates mapped through the truncated-normal cumulative distribution, and global random-walk updates adapted only during burn-in \citep{Murray2010}.
+
+The smallest-error scenario uses $\sigma_{\delta,i}=0.01\widehat\delta_i$, motivated by the upper bound on relative statistical errors stated by \citet{stz1902}. We treat this width as a statistical upper-bound scenario. Additional absolute widths 0.05 and 0.10, and width 0.05 with common offset $b\sim\mathcal N(0,0.05^2)$, probe broader modelling uncertainties. The published population scatter 0.085 is not substituted for a measurement error. Table~\ref{tab:deltapost} gives the new results. All eight posterior calculations satisfy the diagnostics for the global parameters and every varying latent coordinate. These slope-error priors apply to the power-law tracer; we report the marginal posteriors separately from the likelihood-based BIC comparisons.
+\begin{table*}[t]\centering\small\caption{Power-law posterior sensitivity to slope-error scenarios. Entries are medians and central 68\% intervals. The relative-1\% row is a statistical upper-bound scenario; the other widths are assumed sensitivity inputs.}\label{tab:deltapost}\input{tables/delta_posteriors.tex}\end{table*}
+\input{tables/delta_findings.tex}
+
+Removing the BELLS family leaves 89 lenses and gives $\Delta\mathrm{BIC}_0=7.40$ for power law; removing S4TM leaves 71 lenses and gives $-1.82$. The main curved-tracer comparisons remain negative. Survey, redshift, and aperture coverage change together, preventing causal attribution to a single survey.
+
+As a three-coefficient structural control, P3 adds $\gamma_s\log_{10}\widetilde\Sigma_L$ to Eq.~(\ref{eq:P2}), where
+\begin{equation}
+\widetilde\Sigma_L=166\,\frac{D_s/(1\,\mathrm{Mpc})}{[D_l/(1\,\mathrm{Mpc})][D_{ls}/(1\,\mathrm{Mpc})]}
+\left(\frac{\theta_E}{\theta_{\rm eff}}\right)^2.
+\end{equation}
+The predictor distances assume flat $\Omega_m=0.30$ and $H_0=70\,\kms\,\mathrm{Mpc}^{-1}$. This differs from the kinematic predictor used by \citet{stz1902}. The power-law P3 comparisons give 6.87 and 35.19. Its pivot slope additionally conditions on the sample median predictor, and its posterior parameters appear in Table~\ref{tab:p3posterior}.
+\subsection{Scope and limitations}\label{sec:limitations}
+All models assume spherical symmetry, a power-law total mass density, and one radially constant beta shared by the lenses. They do not fit flattening, rotation, anisotropy gradients, or population scatter. The curved tracers replace the individual inner-slope information with effective radii and assumed profile families. Original imaging and consistent PSF modelling are needed to compare profiles under a common photometric likelihood. A broad-band light profile can also differ from the spectral weighting of the kinematic measurement \citep{Fores2026}.
+
+The SN ratios are correlated and use finite redshift matching and first-order covariance propagation; Sect.~\ref{sec:distancechecks} reports the corresponding sensitivity tests. Gaussian magnitude-difference draws describe nonlinear propagation around the observed magnitudes, while a latent-distance analysis would require a specified prior and joint treatment of the supernova data. The additional 3\% variance term and fitted scatter give a phenomenological uncertainty model. The fitted $\gamma_z$ characterises the selected, heterogeneous sample \citep{Bolton2012,Sonnenfeld2013,stz1902}, and $\gamma_0$ is its extrapolated zero-redshift intercept. The inference targets dynamical model sensitivities; cosmological parameters, including $H_0$, are not fitted.
+
+The assumed S\'ersic indices, PSF values, and broader latent-slope widths define sensitivity scenarios in the absence of individual image-fitting and spectroscopic-extraction likelihoods. Within this scope, the likelihood, recovery, and sensitivity comparisons quantify how light-profile assumptions can affect a common-anisotropy preference. Interpreting that preference as an individual orbital property, or attributing the observed residuals to a unique physical cause, requires additional photometric and kinematic constraints.
+
+\section{Conclusions}\label{sec:conclusions}
+We quantified the dependence of anisotropy and density-slope inference on tracer-profile assumptions using 107 galaxy-scale lenses and distinct \pantheon\ counterparts. The main findings are:
+\begin{enumerate}
+\item The baseline individual-slope power-law tracer yields $\Delta\mathrm{BIC}_0=6.74$ and $\Delta\mathrm{BIC}_{0.18}=41.51$ when each specified fixed reference is compared with a common free anisotropy parameter.
+\item Hernquist and S\'ersic $n=4$ alternatives remove this criterion advantage and reduce the slope changes induced by fixing beta. The contrasting results quantify sensitivity to the photometric representation, which uses different information in the power-law and curved-tracer cases.
+\item The comparison also depends on distance uncertainty, survey composition, and the input slopes. The 95-lens lower-uncertainty subset gives a power-law isotropy difference of 2.51. The principal tracer dependence persists across the finite-matching and alternative-assignment checks, while the strength of the power-law preference varies.
+\item Under the specified conditional noise model, fitting a power-law tracer to isotropic S\'ersic $n=4$ and Hernquist simulations produces $\Delta\mathrm{BIC}_0>6$ in 60.0\% and 50.0\% of realisations, respectively. The corresponding matched-tracer frequencies are 0.5\% and 1.0\%. These controlled experiments show how tracer mismatch can generate an effective anisotropy preference.
+\end{enumerate}
+The combined comparisons motivate joint assessment of anisotropy, light-profile representation, photometric uncertainty, and aperture weighting. They provide a quantitative basis for testing light-profile assumptions before interpreting a fitted common beta as a population orbital property. Consistent imaging constraints and spatially resolved spectroscopy can further separate tracer structure from orbital anisotropy.
+
+\section*{Data availability}\label{sec:data_avail}
+The \pantheon\ data and covariance are available from the official release at \url{https://github.com/PantheonPlusSH0ES/DataRelease}. Original lens surveys are cited in Table~\ref{tab:surveys}, and the compiled lens parameters are listed in Table A1 of \citet{stz1902}. The individual luminosity-slope measurements were provided by Y.~Chen. The repository for our analysis code and data products is \url{https://github.com/HUJIAN0000/sgl-sn-anisotropy}. The revised code, matched catalogue, and derived summary tables accompanying this manuscript will be provided in an updated release at the same address.
+
+\begin{acknowledgements}
+
+We acknowledge the use of the \pantheon\ supernova data and are grateful to
+Dr.~Yun~Chen for the individual luminosity density-slope measurements. This work is
+supported by Yunnan Basic Research Projects 202501AT070439, the Local
+Universities Joint Special Project --- General Project (No.~202301A0070247), the
+National Natural Science Foundation of China (No.~12473029), the Dali Expert
+Workstation of Rainer Spurzem, the Yunnan Academician Workstation of Wang Jingxiu
+(202005AF150025), the China Manned Space Project (No.~CMS-CSST-2021-A08), the
+Guanghe Foundation (No.~ghfund202407013470), the Jiangsu Funding Program for
+Excellent Postdoctoral Talent (20220ZB59), and the China Postdoctoral Science
+Foundation (2022M721561).
+
+\end{acknowledgements}
+\begin{thebibliography}{}
+
+\bibitem[Auger et al.(2009)]{Auger2009} Auger, M.~W., Treu, T., Bolton, A.~S., et al. 2009, \apj, 705, 1099
+\bibitem[Auger et al.(2010)]{Auger2010} Auger, M.~W., Treu, T., Bolton, A.~S., et al. 2010, \apj, 724, 511
+\bibitem[Binney(1980)]{Binney1980} Binney, J. 1980, \mnras, 190, 873
+\bibitem[Birrer et al.(2020)]{Birrer2020} Birrer, S., Shajib, A.~J., Galan, A., et al. 2020, \aap, 643, A165
+\bibitem[Bolton et al.(2006)]{Bolton2006} Bolton, A.~S., Burles, S., Koopmans, L.~V.~E., Treu, T., \& Moustakas, L.~A. 2006, \apj, 638, 703
+\bibitem[Bolton et al.(2008)]{Bolton2008} Bolton, A.~S., Burles, S., Koopmans, L.~V.~E., et al. 2008, \apj, 682, 964
+\bibitem[Bolton et al.(2012)]{Bolton2012} Bolton, A.~S., Brownstein, J.~R., Kochanek, C.~S., et al. 2012, \apj, 757, 82
+\bibitem[Brout et al.(2022)]{Brout2022} Brout, D., Scolnic, D., Popovic, B., et al. 2022, \apj, 938, 110
+\bibitem[Brownstein et al.(2012)]{Brownstein2012} Brownstein, J.~R., Bolton, A.~S., Schlegel, D.~J., et al. 2012, \apj, 744, 41
+\bibitem[Cao et al.(2015)]{Cao2015} Cao, S., Biesiada, M., Gavazzi, R., et al. 2015, \apj, 806, 185
+\bibitem[Chen et al.(2019)]{stz1902} Chen, Y., Li, R., Shu, Y., \& Cao, X. 2019, \mnras, 488, 3745
+\bibitem[Falco et al.(1985)]{Falco1985} Falco, E.~E., Gorenstein, M., \& Shapiro, I.~I. 1985, \apjl, 289, L1
+\bibitem[Foreman-Mackey et al.(2013)]{ForemanMackey2013} Foreman-Mackey, D., Hogg, D.~W., Lang, D., \& Goodman, J. 2013, \pasp, 125, 306
+\bibitem[For\'es-Toribio et al.(2026)]{Fores2026} For\'es-Toribio, R., Kochanek, C.~S., \& Mu\~noz, J.~A. 2026, \href{https://doi.org/10.3847/1538-4357/ae78c3}{\apj, 1005, 228}
+\bibitem[Geng et al.(2025)]{Geng2025} Geng, S., Grespan, M., Thuruthipilly, H., et al. 2025, \aap, 694, A196
+\bibitem[Gerhard et al.(2001)]{Gerhard2001} Gerhard, O., Kronawitter, A., Saglia, R.~P., \& Bender, R. 2001, \aj, 121, 1936
+\bibitem[Hernquist(1990)]{Hernquist1990} Hernquist, L. 1990, \apj, 356, 359
+\bibitem[Hu(2023)]{Hu2023} Hu, J. 2023, \apj, 948, 47
+\bibitem[Hu et al.(2023)]{Hu2023p} Hu, J., Hu, J.-P., Li, Z., Zhao, W., \& Chen, J. 2023, \prd, 108, 083024
+\bibitem[Knabel et al.(2026)]{Knabel2026} Knabel, S., Mozumdar, P., Shajib, A.~J., et al. 2026, arXiv e-prints, arXiv:2609.03089
+\bibitem[Koopmans et al.(2006)]{Koopmans2006} Koopmans, L.~V.~E., Treu, T., Bolton, A.~S., et al. 2006, \apj, 649, 599
+\bibitem[Mamon \& \L{}okas(2005)]{MamonLokas2005} Mamon, G.~A., \& \L{}okas, E.~L. 2005, \mnras, 363, 705
+\bibitem[Mozumdar et al.(2026)]{Mozumdar2026} Mozumdar, P., Knabel, S., Shajib, A.~J., et al. 2026, arXiv e-prints, arXiv:2609.09411
+\bibitem[Murray et al.(2010)]{Murray2010} Murray, I., Adams, R.~P., \& MacKay, D.~J.~C. 2010, in Proceedings of the Thirteenth International Conference on Artificial Intelligence and Statistics, PMLR, 9, 541
+\bibitem[Schneider \& Sluse(2013)]{Schneider2013} Schneider, P., \& Sluse, D. 2013, \aap, 559, A37
+\bibitem[Scolnic et al.(2022)]{Scolnic2022} Scolnic, D., Brout, D., Carr, A., et al. 2022, \apj, 938, 113
+\bibitem[Shajib et al.(2026)]{Shajib2026} Shajib, A.~J., Treu, T., Suyu, S.~H., et al. 2026, \aap, 707, A314
+\bibitem[Shu et al.(2015)]{Shu2015} Shu, Y., Bolton, A.~S., Brownstein, J.~R., et al. 2015, \apj, 803, 71
+\bibitem[Shu et al.(2016a)]{Shu2016a} Shu, Y., Bolton, A.~S., Kochanek, C.~S., et al. 2016a, \apj, 824, 86
+\bibitem[Shu et al.(2016b)]{Shu2016b} Shu, Y., Bolton, A.~S., Mao, S., et al. 2016b, \apj, 833, 264
+\bibitem[Shu et al.(2017)]{Shu2017} Shu, Y., Brownstein, J.~R., Bolton, A.~S., et al. 2017, \apj, 851, 48
+\bibitem[Sonnenfeld et al.(2013)]{Sonnenfeld2013} Sonnenfeld, A., Treu, T., Gavazzi, R., et al. 2013, \apj, 777, 98
+\bibitem[Suyu et al.(2017)]{Suyu2017} Suyu, S.~H., Bonvin, V., Courbin, F., et al. 2017, \mnras, 468, 2590
+\bibitem[TDCOSMO Collaboration(2025)]{TDCOSMO2025} TDCOSMO Collaboration (Birrer, S., Buckley-Geer, E.~J., Cappellari, M., et al.) 2025, \aap, 704, A63
+\bibitem[Treu(2010)]{Treu2010} Treu, T. 2010, \araa, 48, 87
+\bibitem[Vehtari et al.(2021)]{Vehtari2021} Vehtari, A., Gelman, A., Simpson, D., Carpenter, B., \& B\"urkner, P.-C. 2021, Bayesian Analysis, 16, 667
+\bibitem[Verma \& Minor(2026)]{Verma2026} Verma, V., \& Minor, Q. 2026, \href{https://doi.org/10.3847/1538-4357/ae4722}{\apj, 1000, 264}
+\bibitem[Wong et al.(2020)]{Wong2020} Wong, K.~C., Suyu, S.~H., Chen, G.~C.~F., et al. 2020, \mnras, 498, 1420
+
+\end{thebibliography}
+\appendix
+\section{Analytic power-law normalisation}\label{sec:analytic}
+With $\xi=\gamma+\delta_i-2$, the dimensionless function in Eq.~(\ref{eq:sigma_th}) is
+\begin{equation}
+\begin{split}
+F={}&\frac{3-\delta_i}{(\xi-2\beta)(3-\xi)}
+\left[\frac{\Gamma((\xi-1)/2)}{\Gamma(\xi/2)}-
+\beta\frac{\Gamma((\xi+1)/2)}{\Gamma((\xi+2)/2)}\right]\\
+&\times\frac{\Gamma(\gamma/2)\Gamma(\delta_i/2)}{\Gamma((\gamma-1)/2)\Gamma((\delta_i-1)/2)}.
+\end{split}
+\end{equation}
+For $\gamma=\delta_i=2$ and $\beta=0$, $F=1/(2\sqrt\pi)$, giving $\sigma^2=c^2\theta_E/(4\pi R)$, the singular-isothermal-sphere normalisation. The numerical power-law engine reproduces this limit and general convergent analytic moments. Formal analytic continuations outside the convergent domain are not used for the main posterior.
+
+\section{Covariance propagation}\label{sec:propagation}
+Let $q_i=1-R_i$. The derivatives are
+\begin{equation}
+\frac{\partial R_i}{\partial\Delta m_i}=-\frac{\ln10}{5}q_i,\qquad
+\frac{\partial\sigma_i}{\partial R_i}=-\frac{\sigma_i}{2R_i}.
+\end{equation}
+The diagonal Jacobians give $\mathbf C_R=\mathbf J_{Rm}\mathbf C_{\Delta m}\mathbf J_{Rm}^{T}$ and $\mathbf C_{\sigma,{\rm SN}}=\mathbf J_{\sigma R}\mathbf C_R\mathbf J_{\sigma R}^{T}$. The latter is recalculated at every likelihood evaluation. This first-order construction retains covariance but does not represent finite-redshift matching errors or a nonlinear distance posterior.
+
+For a fiducial-assisted redshift correction, define $q_i^{\rm match,fid}$ by applying the matching formula to noiseless model magnitudes at the actual counterpart redshifts and $q_i^{\rm target,fid}=\chi_{l,i}/\chi_{s,i}$. With $a_i=q_i^{\rm target,fid}/q_i^{\rm match,fid}$, the check uses $R'_i=1-a_i(1-R_i)$ and $(C'_R)_{ij}=a_i(C_R)_{ij}a_j$. The assumed background dependence is explicit.
+
+\section{Numerical verification and sampling diagnostics}\label{sec:numerical}
+The radial calculations are checked against doubled radial resolution, a factor-ten extension of the radial limits, and doubled Abel/angular nodes. Each curved-tracer case is evaluated at its three likelihood maxima and 50 independent feasible perturbations near the free maximum. We require $|\Delta\ln\mathcal L|<0.1$ and maximum relative dispersion changes below $5\times10^{-4}$. Differences smaller than the numerical uncertainty are interpreted as effectively equal likelihoods.
+
+To accelerate sampling, a tensor Chebyshev representation of $\log(\sigma^2 R/A(\gamma))$ is built from direct integrations, where $A(\gamma)=2\Gamma(\gamma/2)/[\sqrt\pi\Gamma((\gamma-1)/2)]$ is evaluated analytically. Removing this known factor improves behaviour near the lower gamma boundary. The representation is checked using 120 independent off-grid parameter sets across the supported gamma and beta range, requiring relative dispersion error below $2\times10^{-6}$, plus explicit likelihood checks against the direct engine. The cache includes the input, profile, grid and implementation hashes.
+
+Posterior checks include rank-normalised and folded split $\widehat R<1.01$ \citep{Vehtari2021}, autocorrelation-based effective sample size (ESS) at least 2000, retained chain lengths exceeding $100\tau$, and changes in estimated $\tau$ below 5\%. Separate ensembles supply independent runs; interacting walkers are not declared independent chains. Chain lengths, diagnostic arrays and trace plots are retained in the reproduction material. The same convergence thresholds are applied throughout the sampling.
+\input{tables/diagnostic_findings.tex}
+
+\section{Sensitivity comparisons}\label{sec:sensitivity}
+Table~\ref{tab:sensitivity} compares each beta hypothesis within its own stated sample and scenario. Absolute BIC values are not compared between different data memberships. Coherent delta offsets are assumed perturbations; mismatch corrections use stated fiducial backgrounds. The separate P3 control uses the power-law tracer and one additional structural coefficient.
+\begin{table*}[t]\centering\small
+\caption{Sensitivity comparisons. Positive fixed-minus-free differences favour the free model within the given row. Subset differences conflate information loss, selection and changed design; they are not estimates of a causal survey effect.}
+\label{tab:sensitivity}\input{tables/sensitivity.tex}\end{table*}
+
+\section{Sampling convergence diagnostics and matching variants}\label{sec:repro}
+For each main posterior we use four independently initialised ensembles; each latent-slope posterior uses four independent chains. Main ensembles contain 15000 or 25000 steps with 3000 discarded, and latent-slope chains contain 80000--320000 steps with 5000 discarded. Depending on the beta treatment and common-offset scenario, the latent analyses have 110--112 varying coordinates. Table~\ref{tab:diagnostics} lists the accepted lengths, maximum rank-normalised split $\widehat R$, and minimum autocorrelation-based approximate ESS. The latent diagnostics include all varying slope coordinates and the common offset where fitted.
+
+We retain the matched supernova row indices, covariance blocks, configurations, chain checkpoints, and diagnostic arrays to support reproducibility. The magnitude covariance is symmetrised as $(C+C^T)/2$ to remove the published rounding-level asymmetry (maximum $3\times10^{-8}$). Table~\ref{tab:matching} gives the alternative assignments, and Table~\ref{tab:p3posterior} reports the P3 posterior parameters. Approximate ESS is used alongside chain-length, autocorrelation-stability, between-run, and trace checks.
+\begin{table*}[t]\centering\small\caption{Accepted posterior diagnostics. Each row contains four independent ensembles or chains. The minimum approximate ESS and maximum rank-normalised split $\widehat R$ include every varying latent coordinate for the slope-error products.}\label{tab:diagnostics}\input{tables/diagnostics.tex}\end{table*}
+\begin{table*}[t]\centering\small\caption{Alternative matching assignments. Comparisons are within each row; shared triplets use original lens and SN identifiers.}\label{tab:matching}\input{tables/matching.tex}\end{table*}
+\begin{table*}[t]\centering\small\caption{P3 power-law posterior medians and central 68\% intervals, at the sample median redshift and median structural predictor.}\label{tab:p3posterior}\input{tables/p3_posterior.tex}\end{table*}
+
+\section{Joint posterior distributions}\label{sec:joint_posteriors}
+The following triangles show all fitted global parameters for each of the four anisotropy treatments. Every distribution is computed from the retained samples for the primary 107-lens catalogue. The black dashed line on each diagonal marks the full-sample median; the annotations give the median and central 68\% interval. The sienna and tan bands show the 16th--84th and 2.275th--97.725th percentile intervals, respectively, labelled $1\sigma$ and $2\sigma$ for display. The inner and outer blue contours enclose 68\% and 95\% of each two-dimensional marginal density; these joint probabilities are distinct from the diagonal equal-tailed intervals. GetDist provides the smoothed densities with relative smoothing scales 0.5 in one dimension and 0.7 in two dimensions. All retained draws are used without random subsampling. The density estimator is supplied with the actual hard prior ranges to avoid smoothing into excluded parameter values. Smoothing is a display operation and does not enter the reported numerical intervals.
+
+Figures~\ref{fig:corner_p2_powerlaw_free} and \ref{fig:corner_p2_powerlaw_fixed} show the P2 power-law cases; Figs.~\ref{fig:corner_p2_hernquist_free} and \ref{fig:corner_p2_hernquist_fixed} show Hernquist; Figs.~\ref{fig:corner_p2_sersic_free} and \ref{fig:corner_p2_sersic_fixed} show S\'ersic $n=4$. Figures~\ref{fig:p3_flat}, \ref{fig:p3_gauss}, and \ref{fig:p3_fixed} give the P3 controls. Fixed-beta triangles omit beta because it is not sampled. The plotted $\gamma_0$ remains the zero-redshift intercept, and $f_{\rm int}$ is fractional dispersion scatter. The panels display the parameter correlations for each tracer and anisotropy treatment. The P3 posterior uses the lensing-based predictor defined in the structural-control subsection, a uniform $-1.5<\gamma_s<1.5$ prior, and the same sampling and convergence requirements as P2. It remains a power-law structural control and does not extend the curved-tracer analysis to P3.
+\begin{figure*}[p]\centering
+\includegraphics[width=.49\textwidth]{figures/corner_powerlaw_flat.pdf}
+\includegraphics[width=.49\textwidth]{figures/corner_powerlaw_gaussian.pdf}
+\caption{P2 individual-slope power-law tracer. Free beta with a uniform prior (left) and the truncated Gaussian prior (right). The marginal and contour conventions are those of Appendix~\ref{sec:joint_posteriors}.}\label{fig:corner_p2_powerlaw_free}\end{figure*}
+\begin{figure*}[p]\centering
+\includegraphics[width=.49\textwidth]{figures/corner_powerlaw_fixed0.pdf}
+\includegraphics[width=.49\textwidth]{figures/corner_powerlaw_fixed018.pdf}
+\caption{P2 individual-slope power-law tracer. Fixed $\beta=0$ (left) and $\beta=0.18$ (right). The marginal and contour conventions are those of Appendix~\ref{sec:joint_posteriors}.}\label{fig:corner_p2_powerlaw_fixed}\end{figure*}
+\clearpage
+\begin{figure*}[p]\centering
+\includegraphics[width=.49\textwidth]{figures/corner_hernquist_flat.pdf}
+\includegraphics[width=.49\textwidth]{figures/corner_hernquist_gaussian.pdf}
+\caption{P2 Hernquist tracer. Free beta with a uniform prior (left) and the truncated Gaussian prior (right). The marginal and contour conventions are those of Appendix~\ref{sec:joint_posteriors}.}\label{fig:corner_p2_hernquist_free}\end{figure*}
+\begin{figure*}[p]\centering
+\includegraphics[width=.49\textwidth]{figures/corner_hernquist_fixed0.pdf}
+\includegraphics[width=.49\textwidth]{figures/corner_hernquist_fixed018.pdf}
+\caption{P2 Hernquist tracer. Fixed $\beta=0$ (left) and $\beta=0.18$ (right). The marginal and contour conventions are those of Appendix~\ref{sec:joint_posteriors}.}\label{fig:corner_p2_hernquist_fixed}\end{figure*}
+\clearpage
+\begin{figure*}[p]\centering
+\includegraphics[width=.49\textwidth]{figures/corner_sersic_n4_flat.pdf}
+\includegraphics[width=.49\textwidth]{figures/corner_sersic_n4_gaussian.pdf}
+\caption{P2 S\'ersic $n=4$ tracer. Free beta with a uniform prior (left) and the truncated Gaussian prior (right). The marginal and contour conventions are those of Appendix~\ref{sec:joint_posteriors}.}\label{fig:corner_p2_sersic_free}\end{figure*}
+\begin{figure*}[p]\centering
+\includegraphics[width=.49\textwidth]{figures/corner_sersic_n4_fixed0.pdf}
+\includegraphics[width=.49\textwidth]{figures/corner_sersic_n4_fixed018.pdf}
+\caption{P2 S\'ersic $n=4$ tracer. Fixed $\beta=0$ (left) and $\beta=0.18$ (right). The marginal and contour conventions are those of Appendix~\ref{sec:joint_posteriors}.}\label{fig:corner_p2_sersic_fixed}\end{figure*}
+\clearpage
+\begin{figure*}[p]\centering\includegraphics[width=.86\textwidth]{figures/corner_p3_powerlaw_flat.pdf}
+\caption{P3 individual-slope power-law posterior with a uniform beta prior. The additional structural coefficient $\gamma_s$ multiplies the lensing-based predictor $\log_{10}\widetilde\Sigma_L$.}\label{fig:p3_flat}\end{figure*}\clearpage
+\begin{figure*}[p]\centering\includegraphics[width=.86\textwidth]{figures/corner_p3_powerlaw_gaussian.pdf}
+\caption{P3 individual-slope power-law posterior with the truncated Gaussian beta prior. The additional structural coefficient $\gamma_s$ multiplies the lensing-based predictor $\log_{10}\widetilde\Sigma_L$.}\label{fig:p3_gauss}\end{figure*}\clearpage
+\begin{figure*}[p]\centering
+\includegraphics[width=.49\textwidth]{figures/corner_p3_powerlaw_fixed0.pdf}
+\includegraphics[width=.49\textwidth]{figures/corner_p3_powerlaw_fixed018.pdf}
+\caption{P3 individual-slope power-law posteriors with fixed $\beta=0$ (left) and $\beta=0.18$ (right). The structural predictor and other model assumptions are the same as in the free-beta P3 panels.}\label{fig:p3_fixed}\end{figure*}\clearpage
+
+\end{document}

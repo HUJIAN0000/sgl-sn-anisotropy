@@ -1,0 +1,9 @@
+# Manuscript v4 and reproduction-entrypoint update
+
+The abstract and conclusions now lead with the quantitative tracer-profile and recovery results. Repeated interpretation caveats have been consolidated in the modelling and scope sections; the manuscript retains the distinctions between fixed values and priors, different photometric information, approximate distance propagation and physical orbital interpretation. Existing numbers, equations, source citations and figure/table assets are unchanged; established recovery frequencies are also summarised in the abstract and conclusions.
+
+The reproduction entrypoint now distinguishes a complete but unconverged initial latent stage from a subprocess crash, validates all eight closed products before continuation, records subprocess logs, and writes the downstream accepted-product ledger when no extension is needed. The serial matching-variants stage rejects an explicit workers option. The raw-matching instructions specify one verified copy throughout. These changes affect orchestration and documentation, not the scientific model, inference algorithm, seeds or convergence criteria. Twenty-one lightweight tests and a read-only interface check against the existing initial products passed.
+
+The full portable production calculation was not repeated during this update. No new release tag or DOI is assigned by preparing the local package. The included manuscript retains future-release wording until the author publishes the revision assets.
+
+Formatting correction: links retain the blue style of the actual first-submission PDF. The separate reviewer PDF marks revised passages in black bold type against that submitted PDF, using the text-verified initial source as a typesetting aid. The clean manuscript has no revision bolding. The correction changes presentation only.

@@ -1,0 +1,85 @@
+{
+  "repository": "https://github.com/HUJIAN0000/sgl-sn-anisotropy",
+  "main_products": 16,
+  "latent_products": 8,
+  "archives": {
+    "posterior_powerlaw.zip": {
+      "sha256": "fc664f7078334b034358d047994e6218fbf851d1b12f9382768de24475ea86d8",
+      "bytes": 239708648,
+      "members": {
+        "results/production/chains/powerlaw/fixed0/posterior_draws.npz": "bffc023a1ca29edcb48f587365e2e5d7097e161c39421ad10d05ea4e5be22aea",
+        "results/production/chains/powerlaw/fixed0/posterior_summary.json": "2672bbfd0654cbdff82d2de2abaeccd89159ec12423418bbddb3307f9c3015a3",
+        "results/production/chains/powerlaw/fixed018/posterior_draws.npz": "76af147f0ac0f1ea5ba19fe680ca781c9191c27b3981e3e5fcab07574e15c5b7",
+        "results/production/chains/powerlaw/fixed018/posterior_summary.json": "b81b2b6461e9eb257972b1689bfa69c6ef982ee38ee1049aabbecb5bfa5618e6",
+        "results/production/chains/powerlaw/flat/posterior_draws.npz": "c18c9a47dc80ce34c61191ce47cf447723d5c4d6ac3c788cc991218ccb8b4c44",
+        "results/production/chains/powerlaw/flat/posterior_summary.json": "5784774837b7cb2481e6bdd73a769d8a30479b42b962991acedeb1b500b835c4",
+        "results/production/chains/powerlaw/gaussian/posterior_draws.npz": "f7d73b868375743a869b7a69ff49137620a257a01adea8c16eb1f5fe56552127",
+        "results/production/chains/powerlaw/gaussian/posterior_summary.json": "b5b466707cf8586d324d487053726a8ef652ff2e06d98a0c39705abde2319201"
+      }
+    },
+    "posterior_hernquist.zip": {
+      "sha256": "cfaba4190f4f70c6db1f50b7f800fc5f869fecd926edf1d017a7d64188a60136",
+      "bytes": 215965509,
+      "members": {
+        "results/production/chains/hernquist/fixed0/posterior_draws.npz": "0d37f87ad8ce9b45b033caf50c12409d7ae0195397fadccdbe1379e196eb134e",
+        "results/production/chains/hernquist/fixed0/posterior_summary.json": "17e7100ed0db88e80d783dcc8ffdfc96ac17e57e2985c583757148b1bb04ae41",
+        "results/production/chains/hernquist/fixed018/posterior_draws.npz": "ae90f52cae374d7ce08f9c768fb32d065b1d09625c6c66b3048c0efad83a9b38",
+        "results/production/chains/hernquist/fixed018/posterior_summary.json": "7fc5b48e6a69514aded1cca8ab874a0d088d3e66417d7d02f6485b09625a79bd",
+        "results/production/chains/hernquist/flat/posterior_draws.npz": "5e10c77c378422823ecba804d00883f16a362cc39bc3547ebcb6b0abde61d84d",
+        "results/production/chains/hernquist/flat/posterior_summary.json": "2e8a807b9276ee5a335f73588d656f5e58b236d042546cefe03991c59cd05d5b",
+        "results/production/chains/hernquist/gaussian/posterior_draws.npz": "ecb3a0f3c9b2ca1ae870450ae6c3082edada97b7e3e4006a1d22d98938c839c0",
+        "results/production/chains/hernquist/gaussian/posterior_summary.json": "3aef55f557f986f1a255361b43c50e416115a500fe2e52de5709c565c3881063"
+      }
+    },
+    "posterior_sersic_n4.zip": {
+      "sha256": "a7a929ab0d5375bdeb5b358df0850b12771fb49e9170651628290b76a6a7fef3",
+      "bytes": 189323704,
+      "members": {
+        "results/production/chains/sersic_n4/fixed0/posterior_draws.npz": "864a491d47032d4984bc8784b3811b9285f79445cafc18b52cb7d16b2ef9a57d",
+        "results/production/chains/sersic_n4/fixed0/posterior_summary.json": "b0270400f7aba06c0c8ed5d675ebc0a1cd1565a234bf2771e2c8387fb65766aa",
+        "results/production/chains/sersic_n4/fixed018/posterior_draws.npz": "9e173ecbfad6333bf8ef4853c8d5bbe750c122e8a7351eb2920d6044b20fd680",
+        "results/production/chains/sersic_n4/fixed018/posterior_summary.json": "91af5f2b1467a2e1408ade0db1b600c5c272c8966e05303d63d1d6fdadf94695",
+        "results/production/chains/sersic_n4/flat/posterior_draws.npz": "b0d9848f1aa2f2bde025def1b3cb366db188e2f3efa7928c4dd86bad001136ff",
+        "results/production/chains/sersic_n4/flat/posterior_summary.json": "bb64f99b3d4a61b59eb7707e556036c019a6e57d6cd42f59cc74ef6a03bfd1af",
+        "results/production/chains/sersic_n4/gaussian/posterior_draws.npz": "fa35808369f3145ce347fe892730114a85ba8a8add616a36d531cf10ca8d5c83",
+        "results/production/chains/sersic_n4/gaussian/posterior_summary.json": "8f5829ca9972c5cc9b882b2906a82adbe4e67fde13a139cfe8e05cbec95e354b"
+      }
+    },
+    "posterior_p3_powerlaw.zip": {
+      "sha256": "4a095780141b8b6fcb0663de36693baa528b8192951a77bfe5eab42a4a0764a3",
+      "bytes": 269158083,
+      "members": {
+        "results/production/chains/p3_powerlaw/fixed0/posterior_draws.npz": "f795b9c3fa048f5a16b705dbb8e3784f4502f19f3f9b1220b42ee35b47908fcf",
+        "results/production/chains/p3_powerlaw/fixed0/posterior_summary.json": "54879810b0372b1c3de8d44666ac1244c51f191f63ec9b334f5344819a3829eb",
+        "results/production/chains/p3_powerlaw/fixed018/posterior_draws.npz": "b9bc283e3a744de72b38b85de6db6e87404922d64907ad72f26b4ca3ad6f6890",
+        "results/production/chains/p3_powerlaw/fixed018/posterior_summary.json": "390ed15ca40820c01a6cf141bc886e083d1ba6e0792782c6da65a8704b804878",
+        "results/production/chains/p3_powerlaw/flat/posterior_draws.npz": "df7fab7170e171f1541f185d8a6840193038f0ad5175c2c99ab1054954a015de",
+        "results/production/chains/p3_powerlaw/flat/posterior_summary.json": "8286484e19e1bd64ce32558324c637f0abfe90bce6d4b6c2a0622e95afd87073",
+        "results/production/chains/p3_powerlaw/gaussian/posterior_draws.npz": "c9da595db48de6d1913b2664b87e2ce3693f55ee56ca4f4f13e2116c98cf551a",
+        "results/production/chains/p3_powerlaw/gaussian/posterior_summary.json": "1e742a5b95e526b094cdee9ca80764a9fb152a4611be6f83d81b8573f7da9cf9"
+      }
+    },
+    "posterior_latent.zip": {
+      "sha256": "c64412ae497f62a0b72832a42151ebb4d6597733cf3813fe75b49b88b7395e85",
+      "bytes": 53150309,
+      "members": {
+        "results/production/delta/independent005/flat/posterior_draws.npz": "c4b81db3962163478408e5bf082add724e15c655e79ff1f6737cc9c9791c7653",
+        "results/production/delta/independent005/flat/posterior_summary.json": "20dc6ab25ed2fa1e87c15fe40beaa45fafff5f6b76eb24a7a276c637d20ce4d1",
+        "results/production/delta/independent005/fixed0/posterior_draws.npz": "a423caaeb5caf4891ad80163aca45c1444a6929ac12b0c9534d48b7c283fe42e",
+        "results/production/delta/independent005/fixed0/posterior_summary.json": "09ba7fd3ebd620a434276f2338f739c90cf442a4fce487ab824b26dcb60ecee0",
+        "results/production/delta/independent010/flat/posterior_draws.npz": "29bd4b2e9faa30cb7864eaf870ba8559b7414a337835d51278bfff41fe4824b0",
+        "results/production/delta/independent010/flat/posterior_summary.json": "a0fcf3638c169386c636a81563d1be0d41753501c2fcebf1ea1edcf61ec2c763",
+        "results/production/delta/independent010/fixed0/posterior_draws.npz": "013384dcc566a24368fb89ae997bc88c8359365919e71810119d6328d0f301f4",
+        "results/production/delta/independent010/fixed0/posterior_summary.json": "b95d2a5fb5ea5e8d1d6881f7dbb157c74fa024ba3a2a969deceeef2d6c5336b8",
+        "results/production/delta/independent005_coherent005/flat/posterior_draws.npz": "35128ff892e48ec87ffdd3272e47c68a5923a7d970c5772b1c700d1f8a7dfe1f",
+        "results/production/delta/independent005_coherent005/flat/posterior_summary.json": "f10456bcd03937b563702ee6a0deebd6e409c950ae3382ce1bb78cfe8d85180b",
+        "results/production/delta/independent005_coherent005/fixed0/posterior_draws.npz": "bc4abe2319ff35b47ac981cb485f150407fd6adfa40257db2ea189ce30c157de",
+        "results/production/delta/independent005_coherent005/fixed0/posterior_summary.json": "5b77c01ef613c932721f5ac77d7a7a6d08105ed249046f7c571619c7851c0436",
+        "results/production/delta/statistical_1pct_upper_bound/flat/posterior_draws.npz": "f4a3b070f0a56aef48d892032d3876946df96a54abd3ce35861a1bf3efae6cc3",
+        "results/production/delta/statistical_1pct_upper_bound/flat/posterior_summary.json": "4d9b2e9ecad7c9faa98e4e1a72f493081577cd33df1bfe7568bfe2a2a99f64cf",
+        "results/production/delta/statistical_1pct_upper_bound/fixed0/posterior_draws.npz": "e1e096ed80cee64097ee6218a643d6be2661335dfaa37b2a8fb147a98da637e8",
+        "results/production/delta/statistical_1pct_upper_bound/fixed0/posterior_summary.json": "ac099c2d58d7e6efcc8ac331f3be51c66e9ac1db9386118b38a66850ad082de2"
+      }
+    }
+  }
+}

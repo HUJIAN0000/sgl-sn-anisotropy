@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "physical_cores": 16,
+  "logical_threads": 32,
+  "RAM_GB": 31.146930694580078,
+  "target_points_exact": 1204,
+  "all_four_trajectory_states_exact": true,
+  "kernel_timings": {
+    "original": 0.7449502000235952,
+    "prepared": 0.3188018000219017
+  },
+  "throughput_benchmarks": [
+    {
+      "workers": 2,
+      "seconds": 11.904600900015794,
+      "calls": 128000,
+      "calls_per_second": 10752.145416301204,
+      "sampling_kernel_seconds": 20.998182499955874
+    },
+    {
+      "workers": 8,
+      "seconds": 4.072309500013944,
+      "calls": 128000,
+      "calls_per_second": 31431.795643126272,
+      "sampling_kernel_seconds": 21.797737699991558
+    },
+    {
+      "workers": 16,
+      "seconds": 3.663947300054133,
+      "calls": 128000,
+      "calls_per_second": 34935.00029274681,
+      "sampling_kernel_seconds": 29.493818899907637
+    },
+    {
+      "workers": 32,
+      "seconds": 4.264904499985278,
+      "calls": 128000,
+      "calls_per_second": 30012.39535385654,
+      "sampling_kernel_seconds": 42.950705999915954
+    }
+  ],
+  "note": "No dependency change, no fastmath; small-matrix likelihood benchmark includes worker startup and latent-coordinate transform"
+}

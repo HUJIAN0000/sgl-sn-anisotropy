@@ -1,0 +1,145 @@
+{
+  "Fores2026": {
+    "source": "https://api.crossref.org/works/10.3847/1538-4357/ae78c3",
+    "metadata": {
+      "title": [
+        "Dynamical Systematics for Time-delay Lenses and the Impact on the Hubble Constant"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0002-6482-2180",
+          "authenticated-orcid": true,
+          "given": "R.",
+          "family": "Forés-Toribio",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "The Ohio State University"
+            },
+            {
+              "name": "The Ohio State University"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6017-2961",
+          "authenticated-orcid": true,
+          "given": "C. S.",
+          "family": "Kochanek",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "The Ohio State University"
+            },
+            {
+              "name": "The Ohio State University"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-9833-2959",
+          "authenticated-orcid": true,
+          "given": "J. A.",
+          "family": "Muñoz",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Universidad de Valencia"
+            },
+            {
+              "name": "Universidad de Valencia"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "The Astrophysical Journal"
+      ],
+      "volume": "1005",
+      "issue": "2",
+      "page": "228",
+      "DOI": "10.3847/1538-4357/ae78c3",
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            7,
+            8
+          ]
+        ]
+      }
+    }
+  },
+  "Verma2026": {
+    "source": "https://api.crossref.org/works/10.3847/1538-4357/ae4722",
+    "metadata": {
+      "title": [
+        "The Stellar Velocity Anisotropy of Strong Lensing Massive Elliptical Galaxies and Its Role in the Inference of the Hubble Parameter\n                    <i>H</i>\n                    <sub>0</sub>\n                    Using Spatially Resolved Kinematics"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0009-0003-9557-986X",
+          "authenticated-orcid": true,
+          "given": "Vishal",
+          "family": "Verma",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4270-6453",
+          "authenticated-orcid": false,
+          "given": "Quinn",
+          "family": "Minor",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "The Astrophysical Journal"
+      ],
+      "volume": "1000",
+      "issue": "2",
+      "page": "264",
+      "DOI": "10.3847/1538-4357/ae4722",
+      "published": {
+        "date-parts": [
+          [
+            2026,
+            3,
+            27
+          ]
+        ]
+      }
+    }
+  }
+}

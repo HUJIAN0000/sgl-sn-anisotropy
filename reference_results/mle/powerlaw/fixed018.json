@@ -1,0 +1,79 @@
+{
+  "signature": "0b656e1615c4dee7245583939f31dab78794b320b655a00ba6fdd482281d855a",
+  "result": {
+    "spec": {
+      "framework": "P2",
+      "beta_prior": "fixed018",
+      "domain": "convergent_jeans",
+      "tracer": "powerlaw"
+    },
+    "names": [
+      "gamma0",
+      "gamma_z",
+      "f_int"
+    ],
+    "N": 107,
+    "k": 3,
+    "theta": [
+      1.9623610578607258,
+      -1.1327906929955005,
+      0.10742369782057466
+    ],
+    "lnL": -537.1198889677413,
+    "AIC": 1080.2397779354826,
+    "BIC": 1088.2582644388683,
+    "starts": [
+      {
+        "theta": [
+          1.9623610578607258,
+          -1.1327906929955005,
+          0.10742369782057466
+        ],
+        "lnL": -537.1198889677413,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          1.9623611002087618,
+          -1.132790792745015,
+          0.10742369517865916
+        ],
+        "lnL": -537.1198889677413,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      },
+      {
+        "theta": [
+          1.9623610710819124,
+          -1.1327906984553198,
+          0.10742369510696215
+        ],
+        "lnL": -537.1198889677413,
+        "de_success": true,
+        "local_success": true,
+        "de_message": "Optimization terminated successfully.",
+        "local_message": "Optimization terminated successfully."
+      }
+    ],
+    "multi_start_lnL_range": 0.0,
+    "optimizer_agreement_checked": true,
+    "elapsed_seconds": 2.4289879000280052,
+    "data_digest": "96754c327f40432b2b84146d3be02ce171b96b3a07597256f95dbd3287e3e021",
+    "optimization": "likelihood only; Gaussian beta prior does not enter AIC/BIC"
+  },
+  "extra": {
+    "id": "powerlaw",
+    "tracer": "powerlaw",
+    "posterior_priors": [
+      "flat",
+      "gaussian",
+      "fixed0",
+      "fixed018"
+    ]
+  }
+}
